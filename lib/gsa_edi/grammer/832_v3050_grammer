@@ -1,0 +1,400 @@
+<X12>
+	<ISA>
+		<ISA01><!--I01: Authorization Information Qualifier-->00<!--No Authorization Information Present (No Meaningful Information in I02)--></ISA01>
+		<ISA02><!--I02: Authorization Information--></ISA02>
+		<ISA03><!--I03: Security Information Qualifier-->00<!--No Security Information Present (No Meaningful Information in I04)--></ISA03>
+		<ISA04><!--I04: Security Information--></ISA04>
+		<ISA05><!--I05: Interchange ID Qualifier-->01<!--Duns (Dun & Bradstreet)--></ISA05>
+		<ISA06><!--I06: Interchange Sender ID-->783851723</ISA06>
+		<ISA07><!--I05: Interchange ID Qualifier-->01<!--Duns (Dun & Bradstreet)--></ISA07>
+		<ISA08><!--I07: Interchange Receiver ID-->012966339SIP</ISA08>
+		<ISA09><!--I08: Interchange Date-->190903<!--2019-09-03--></ISA09>
+		<ISA10><!--I09: Interchange Time-->1053<!--10:53:00.00--></ISA10>
+		<ISA11><!--I10: Interchange Control Standards-->U<!--U.S. EDI Community of ASC X12, TDCC, and UCS--></ISA11>
+		<ISA12><!--I11: Interchange Control Version-->00305<!--Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board through October 1994--></ISA12>
+		<ISA13><!--I12: Interchange Control Number-->924639182</ISA13>
+		<ISA14><!--I13: Acknowledgment Requested-->0<!--No Acknowledgment Requested--></ISA14>
+		<ISA15><!--I14: Test Indicator-->T<!--Test Data--></ISA15>
+		<ISA16><!--I15: Component Element Separator-->^</ISA16>
+	</ISA>
+	<GS>
+		<GS01><!--479: Functional Identifier Code-->SC<!--Price/Sales Catalog (832)--></GS01>
+		<GS02><!--142: Application Sender's Code-->GS07F177GA</GS02>
+		<GS03><!--124: Application Receiver's Code-->012966339SIP</GS03>
+		<GS04><!--373: Date-->190903<!--2019-09-03--></GS04>
+		<GS05><!--337: Time-->1053<!--10:53:00.00--></GS05>
+		<GS06><!--28: Group Control Number-->924639182</GS06>
+		<GS07><!--455: Responsible Agency Code-->X<!--Accredited Standards Committee X12--></GS07>
+		<GS08><!--480: Version / Release / Industry-->003050<!--Draft Standards Approved for Publication by ASC X12 Procedures Review Board through October 1994--></GS08>
+	</GS>
+	<TS_832>
+		<ST>
+			<ST01><!--143: Transaction Set Identifier Code-->832<!--Price/Sales Catalog--></ST01>
+			<ST02><!--329: Transaction Set Control Number-->371CDFCE</ST02>
+		</ST>
+		<BCT>
+			<BCT01><!--683: Catalog Purpose Code-->CP<!--Customized Catalog--></BCT01>
+			<BCT02><!--684: Catalog Number-->PO-0016</BCT02>
+			<BCT04><!--686: Catalog Revision Number-->01</BCT04>
+			<BCT10><!--353: Transaction Set Purpose Code-->05<!--Replace--></BCT10>
+		</BCT>
+		<REF>
+			<REF01><!--128: Reference Number Qualifier-->GC<!--Government Contract Number--></REF01>
+			<REF02><!--127: Reference Number-->GS-07F-177GA</REF02>
+		</REF>
+		<REF>
+			<REF01><!--128: Reference Number Qualifier-->W6<!--Federal Supply Schedule Number--></REF01>
+			<REF02><!--127: Reference Number-->66</REF02>
+		</REF>
+		<REF>
+			<REF01><!--128: Reference Number Qualifier-->TN<!--Transaction Reference Number--></REF01>
+			<REF03><!--352: Description-->GS-07F-177GA_WWMGSAPRICELIST.PDF</REF03>
+		</REF>
+		<REF>
+			<REF01><!--128: Reference Number Qualifier-->92<!--Change Document Number--></REF01>
+			<REF02><!--127: Reference Number-->PO-0016</REF02>
+		</REF>
+		<REF>
+			<REF01><!--128: Reference Number Qualifier-->ME<!--Message Address or ID--></REF01>
+			<REF03><!--352: Description-->http://www.wwmponline.com/</REF03>
+		</REF>
+		<DTM>
+			<DTM01><!--374: Date/Time Qualifier-->007<!--Effective--></DTM01>
+			<DTM02><!--373: Date-->170821<!--2017-08-21--></DTM02>
+			<DTM05><!--624: Century-->20</DTM05>
+		</DTM>
+		<CTB>
+			<CTB01><!--688: Restrictions/Conditions Qualifier-->OR<!--Ordering--></CTB01>
+			<CTB05><!--522: Amount Qualifier Code-->MO<!--Minimum Order Value--></CTB05>
+			<CTB06><!--610: Amount-->100</CTB06>
+		</CTB>
+		<CTB>
+			<CTB01><!--688: Restrictions/Conditions Qualifier-->OR<!--Ordering--></CTB01>
+			<CTB02><!--352: Description-->540 11,540 12,540 16,540 2,540 21,540 3,603 5,615 19,66 137,566 2,566 3,603 1</CTB02>
+			<CTB05><!--522: Amount Qualifier Code-->MA<!--Maximum Amount--></CTB05>
+			<CTB06><!--610: Amount-->400000</CTB06>
+		</CTB>
+		<CTB>
+			<CTB01><!--688: Restrictions/Conditions Qualifier-->OR<!--Ordering--></CTB01>
+			<CTB02><!--352: Description-->66 1002,66 616</CTB02>
+			<CTB05><!--522: Amount Qualifier Code-->MA<!--Maximum Amount--></CTB05>
+			<CTB06><!--610: Amount-->150000</CTB06>
+		</CTB>
+		<CTB>
+			<CTB01><!--688: Restrictions/Conditions Qualifier-->OR<!--Ordering--></CTB01>
+			<CTB02><!--352: Description-->602 30,602 32</CTB02>
+			<CTB05><!--522: Amount Qualifier Code-->MA<!--Maximum Amount--></CTB05>
+			<CTB06><!--610: Amount-->300000</CTB06>
+		</CTB>
+		<CTB>
+			<CTB01><!--688: Restrictions/Conditions Qualifier-->OR<!--Ordering--></CTB01>
+			<CTB02><!--352: Description-->603 10,603 13,603 2,603 3,603 4,603 7,615 18,66 102,66 141,66 147,66 148,66 231</CTB02>
+			<CTB05><!--522: Amount Qualifier Code-->MA<!--Maximum Amount--></CTB05>
+			<CTB06><!--610: Amount-->400000</CTB06>
+		</CTB>
+		<ITD>
+			<ITD14><!--107: Payment Method Code-->N<!--Billing Account--></ITD14>
+		</ITD>
+		<LDT>
+			<LDT01><!--345: Lead Time Code-->AF<!--From date of PO receipt to delivery.--></LDT01>
+			<LDT02><!--380: Quantity-->3</LDT02>
+			<LDT03><!--344: Unit of Time Period or Interval-->DA<!--Calendar Days--></LDT03>
+		</LDT>
+		<FOB>
+			<FOB01><!--146: Shipment Method of Payment-->PP<!--Prepaid (by Seller)--></FOB01>
+			<FOB02><!--309: Location Qualifier-->OR<!--Origin (Shipping Point)--></FOB02>
+		</FOB>
+		<GROUP_1>
+			<N1>
+				<N101><!--98: Entity Identifier Code-->40<!--Receiver--></N101>
+				<N103><!--66: Identification Code Qualifier-->1<!--D-U-N-S Number, Dun & Bradstreet--></N103>
+				<N104><!--67: Identification Code-->012966339SIP8.4c</N104>
+			</N1>
+		</GROUP_1>
+		<GROUP_1>
+			<N1>
+				<N101><!--98: Entity Identifier Code-->SE<!--Selling Party--></N101>
+				<N102><!--93: Name-->WORLDWIDE MEDICAL PRODUCTS</N102>
+				<N103><!--66: Identification Code Qualifier-->1<!--D-U-N-S Number, Dun & Bradstreet--></N103>
+				<N104><!--67: Identification Code-->783851723</N104>
+			</N1>
+			<N2>
+				<N201><!--93: Name-->WORLDWIDE LIFE SCIENCE</N201>
+			</N2>
+			<N3>
+				<N301><!--166: Address Information-->2521 KUSER RD</N301>
+			</N3>
+			<N4>
+				<N401><!--19: City Name-->HAMILTON</N401>
+				<N402><!--156: State or Province Code-->NJ</N402>
+				<N403><!--116: Postal Code-->08691</N403>
+				<N404><!--26: Country Code-->US</N404>
+			</N4>
+			<REF>
+				<REF01><!--128: Reference Number Qualifier-->4A<!--Personal Identification Number (PIN)--></REF01>
+			</REF>
+			<PER>
+				<PER01><!--366: Contact Function Code-->OD<!--Order Department--></PER01>
+				<PER02><!--93: Name-->WORLDWIDE MEDICAL PRODUCTS</PER02>
+				<PER03><!--365: Communication Number Qualifier-->TE<!--Telephone--></PER03>
+				<PER04><!--364: Communication Number-->866-889-9967</PER04>
+				<PER05><!--365: Communication Number Qualifier-->FX<!--Facsimile--></PER05>
+				<PER06><!--364: Communication Number-->609-570-1110</PER06>
+				<PER07><!--365: Communication Number Qualifier-->EM<!--Electronic Mail--></PER07>
+				<PER08><!--364: Communication Number-->gsaorders@wwmponline.com</PER08>
+			</PER>
+			<PER>
+				<PER01><!--366: Contact Function Code-->AC<!--Administrative Contracting Officer--></PER01>
+				<PER02><!--93: Name-->CHRIS CONWAY</PER02>
+				<PER03><!--365: Communication Number Qualifier-->TE<!--Telephone--></PER03>
+				<PER04><!--364: Communication Number-->866-889-9967</PER04>
+				<PER05><!--365: Communication Number Qualifier-->FX<!--Facsimile--></PER05>
+				<PER06><!--364: Communication Number-->609-570-1110</PER06>
+				<PER07><!--365: Communication Number Qualifier-->EM<!--Electronic Mail--></PER07>
+				<PER08><!--364: Communication Number-->gsaorders@wwmponline.com</PER08>
+			</PER>
+		</GROUP_1>
+		<GROUP_1>
+			<N1>
+				<N101><!--98: Entity Identifier Code-->DZ<!--Delivery Zone--></N101>
+				<N103><!--66: Identification Code Qualifier-->ZN<!--Zone--></N103>
+				<N104><!--67: Identification Code-->00</N104>
+			</N1>
+			<N4>
+				<N402><!--156: State or Province Code-->HI</N402>
+				<N405><!--309: Location Qualifier-->OA<!--Origin (After Loading on Equipment)--></N405>
+			</N4>
+		</GROUP_1>
+		<GROUP_1>
+			<N1>
+				<N101><!--98: Entity Identifier Code-->DZ<!--Delivery Zone--></N101>
+				<N103><!--66: Identification Code Qualifier-->ZN<!--Zone--></N103>
+				<N104><!--67: Identification Code-->00</N104>
+			</N1>
+			<N4>
+				<N402><!--156: State or Province Code-->AK</N402>
+				<N405><!--309: Location Qualifier-->OA<!--Origin (After Loading on Equipment)--></N405>
+			</N4>
+		</GROUP_1>
+		<GROUP_1>
+			<N1>
+				<N101><!--98: Entity Identifier Code-->DZ<!--Delivery Zone--></N101>
+				<N103><!--66: Identification Code Qualifier-->ZN<!--Zone--></N103>
+				<N104><!--67: Identification Code-->00</N104>
+			</N1>
+			<N4>
+				<N402><!--156: State or Province Code-->PR</N402>
+				<N405><!--309: Location Qualifier-->OA<!--Origin (After Loading on Equipment)--></N405>
+			</N4>
+		</GROUP_1>
+		<GROUP_2>
+			<LIN>
+				<LIN01><!--350: Assigned Identification-->1</LIN01>
+				<LIN02><!--235: Product/Service ID Qualifier-->MG<!--Manufacturer's Part Number--></LIN02>
+				<LIN03><!--234: Product/Service ID-->1366S0</LIN03>
+				<LIN04><!--235: Product/Service ID Qualifier-->ZZ<!--Mutually Defined--></LIN04>
+				<LIN05><!--234: Product/Service ID-->BOEKEL</LIN05>
+				<LIN06><!--235: Product/Service ID Qualifier-->PD<!--Part Number Description--></LIN06>
+				<LIN07><!--234: Product/Service ID-->PIPET BOX  - EACH</LIN07>
+				<LIN08><!--235: Product/Service ID Qualifier-->CH<!--Country of Origin Code--></LIN08>
+				<LIN09><!--234: Product/Service ID-->DE</LIN09>
+				<LIN10><!--235: Product/Service ID Qualifier-->PI<!--Purchaser's Item Code--></LIN10>
+				<LIN11><!--234: Product/Service ID-->540 11</LIN11>
+				<LIN12><!--235: Product/Service ID Qualifier-->VP<!--Vendor's (Seller's) Part Number--></LIN12>
+				<LIN13><!--234: Product/Service ID-->41171063</LIN13>
+			</LIN>
+			<REF>
+				<REF01><!--128: Reference Number Qualifier-->51<!--Picture Number--></REF01>
+				<REF03><!--352: Description-->WWLSLogo.jpg</REF03>
+			</REF>
+			<PID>
+				<PID01><!--349: Item Description Type-->F<!--Free-form--></PID01>
+				<PID02><!--750: Product/Process Characteristic-->WD<!--Warranty Description--></PID02>
+				<PID05><!--352: Description-->STANDARD WARRANTY</PID05>
+			</PID>
+			<PID>
+				<PID01><!--349: Item Description Type-->F<!--Free-form--></PID01>
+				<PID05><!--352: Description-->Pipet Box  - Each</PID05>
+			</PID>
+			<PO4>
+				<PO404><!--103: Packaging Code-->UNT<!--Unit--></PO404>
+				<PO406><!--384: Gross Weight per Pack-->1</PO406>
+				<PO407><!--355: Unit or Basis for Measurement Code-->LB<!--Pound--></PO407>
+				<PO408><!--385: Gross Volume per Pack-->1</PO408>
+				<PO409><!--355: Unit or Basis for Measurement Code-->CF<!--Cubic Feet--></PO409>
+				<PO410><!--82: Length-->1</PO410>
+				<PO411><!--189: Width-->1</PO411>
+				<PO412><!--65: Height-->1</PO412>
+				<PO413><!--355: Unit or Basis for Measurement Code-->IN<!--Inch--></PO413>
+			</PO4>
+			<LDT>
+				<LDT01><!--345: Lead Time Code-->AE<!--From date of PO receipt to shipment.--></LDT01>
+				<LDT02><!--380: Quantity-->3</LDT02>
+				<LDT03><!--344: Unit of Time Period or Interval-->DA<!--Calendar Days--></LDT03>
+			</LDT>
+			<FOB>
+				<FOB01><!--146: Shipment Method of Payment-->PS<!--Paid by Seller--></FOB01>
+				<FOB02><!--309: Location Qualifier-->DE<!--Destination (Shipping)--></FOB02>
+			</FOB>
+			<GROUP_3>
+				<CTP>
+					<CTP02><!--236: Price Identifier Code-->D01<!--Federal Supply Schedule (FSS) Price--></CTP02>
+					<CTP03><!--212: Unit Price-->27.51</CTP03>
+					<CTP04><!--380: Quantity-->1</CTP04>
+					<CTP05><!--355: Unit or Basis for Measurement Code-->EA<!--Each--></CTP05>
+				</CTP>
+			</GROUP_3>
+			<GROUP_3>
+				<CTP>
+					<CTP02><!--236: Price Identifier Code-->MSR<!--Manufacturer's Suggested Retail--></CTP02>
+					<CTP03><!--212: Unit Price-->37.4</CTP03>
+					<CTP10><!--499: Condition Value-->00</CTP10>
+				</CTP>
+			</GROUP_3>
+			<GROUP_4>
+				<N1>
+					<N101><!--98: Entity Identifier Code-->DZ<!--Delivery Zone--></N101>
+					<N103><!--66: Identification Code Qualifier-->ZN<!--Zone--></N103>
+					<N104><!--67: Identification Code-->00</N104>
+				</N1>
+				<N4>
+					<N402><!--156: State or Province Code-->HI</N402>
+					<N405><!--309: Location Qualifier-->DE<!--Destination (Shipping)--></N405>
+				</N4>
+			</GROUP_4>
+			<GROUP_4>
+				<N1>
+					<N101><!--98: Entity Identifier Code-->DZ<!--Delivery Zone--></N101>
+					<N103><!--66: Identification Code Qualifier-->ZN<!--Zone--></N103>
+					<N104><!--67: Identification Code-->00</N104>
+				</N1>
+				<N4>
+					<N402><!--156: State or Province Code-->AK</N402>
+					<N405><!--309: Location Qualifier-->DE<!--Destination (Shipping)--></N405>
+				</N4>
+			</GROUP_4>
+			<GROUP_4>
+				<N1>
+					<N101><!--98: Entity Identifier Code-->DZ<!--Delivery Zone--></N101>
+					<N103><!--66: Identification Code Qualifier-->ZN<!--Zone--></N103>
+					<N104><!--67: Identification Code-->00</N104>
+				</N1>
+				<N4>
+					<N402><!--156: State or Province Code-->PR</N402>
+					<N405><!--309: Location Qualifier-->DE<!--Destination (Shipping)--></N405>
+				</N4>
+			</GROUP_4>
+		</GROUP_2>
+		<GROUP_2>
+			<LIN>
+				<LIN01><!--350: Assigned Identification-->2</LIN01>
+				<LIN02><!--235: Product/Service ID Qualifier-->MG<!--Manufacturer's Part Number--></LIN02>
+				<LIN03><!--234: Product/Service ID-->1367S</LIN03>
+				<LIN04><!--235: Product/Service ID Qualifier-->ZZ<!--Mutually Defined--></LIN04>
+				<LIN05><!--234: Product/Service ID-->BOEKEL</LIN05>
+				<LIN06><!--235: Product/Service ID Qualifier-->PD<!--Part Number Description--></LIN06>
+				<LIN07><!--234: Product/Service ID-->PIPET CAN   - EACH</LIN07>
+				<LIN08><!--235: Product/Service ID Qualifier-->CH<!--Country of Origin Code--></LIN08>
+				<LIN09><!--234: Product/Service ID-->DE</LIN09>
+				<LIN10><!--235: Product/Service ID Qualifier-->PI<!--Purchaser's Item Code--></LIN10>
+				<LIN11><!--234: Product/Service ID-->540 11</LIN11>
+			</LIN>
+			<REF>
+				<REF01><!--128: Reference Number Qualifier-->51<!--Picture Number--></REF01>
+				<REF03><!--352: Description-->WWLSLogo.jpg</REF03>
+			</REF>
+			<PID>
+				<PID01><!--349: Item Description Type-->F<!--Free-form--></PID01>
+				<PID02><!--750: Product/Process Characteristic-->WD<!--Warranty Description--></PID02>
+				<PID05><!--352: Description-->STANDARD WARRANTY</PID05>
+			</PID>
+			<PID>
+				<PID01><!--349: Item Description Type-->F<!--Free-form--></PID01>
+				<PID05><!--352: Description-->Pipet Can   - Each</PID05>
+			</PID>
+			<PO4>
+				<PO404><!--103: Packaging Code-->UNT<!--Unit--></PO404>
+				<PO406><!--384: Gross Weight per Pack-->1</PO406>
+				<PO407><!--355: Unit or Basis for Measurement Code-->LB<!--Pound--></PO407>
+				<PO408><!--385: Gross Volume per Pack-->1</PO408>
+				<PO409><!--355: Unit or Basis for Measurement Code-->CF<!--Cubic Feet--></PO409>
+				<PO410><!--82: Length-->1</PO410>
+				<PO411><!--189: Width-->1</PO411>
+				<PO412><!--65: Height-->1</PO412>
+				<PO413><!--355: Unit or Basis for Measurement Code-->IN<!--Inch--></PO413>
+			</PO4>
+			<LDT>
+				<LDT01><!--345: Lead Time Code-->AE<!--From date of PO receipt to shipment.--></LDT01>
+				<LDT02><!--380: Quantity-->3</LDT02>
+				<LDT03><!--344: Unit of Time Period or Interval-->DA<!--Calendar Days--></LDT03>
+			</LDT>
+			<FOB>
+				<FOB01><!--146: Shipment Method of Payment-->PS<!--Paid by Seller--></FOB01>
+				<FOB02><!--309: Location Qualifier-->DE<!--Destination (Shipping)--></FOB02>
+			</FOB>
+			<GROUP_3>
+				<CTP>
+					<CTP02><!--236: Price Identifier Code-->D01<!--Federal Supply Schedule (FSS) Price--></CTP02>
+					<CTP03><!--212: Unit Price-->40.45</CTP03>
+					<CTP04><!--380: Quantity-->1</CTP04>
+					<CTP05><!--355: Unit or Basis for Measurement Code-->EA<!--Each--></CTP05>
+				</CTP>
+			</GROUP_3>
+			<GROUP_3>
+				<CTP>
+					<CTP02><!--236: Price Identifier Code-->MSR<!--Manufacturer's Suggested Retail--></CTP02>
+					<CTP03><!--212: Unit Price-->55</CTP03>
+					<CTP10><!--499: Condition Value-->00</CTP10>
+				</CTP>
+			</GROUP_3>
+			<GROUP_4>
+				<N1>
+					<N101><!--98: Entity Identifier Code-->DZ<!--Delivery Zone--></N101>
+					<N103><!--66: Identification Code Qualifier-->ZN<!--Zone--></N103>
+					<N104><!--67: Identification Code-->00</N104>
+				</N1>
+				<N4>
+					<N402><!--156: State or Province Code-->HI</N402>
+					<N405><!--309: Location Qualifier-->DE<!--Destination (Shipping)--></N405>
+				</N4>
+			</GROUP_4>
+			<GROUP_4>
+				<N1>
+					<N101><!--98: Entity Identifier Code-->DZ<!--Delivery Zone--></N101>
+					<N103><!--66: Identification Code Qualifier-->ZN<!--Zone--></N103>
+					<N104><!--67: Identification Code-->00</N104>
+				</N1>
+				<N4>
+					<N402><!--156: State or Province Code-->AK</N402>
+					<N405><!--309: Location Qualifier-->DE<!--Destination (Shipping)--></N405>
+				</N4>
+			</GROUP_4>
+			<GROUP_4>
+				<N1>
+					<N101><!--98: Entity Identifier Code-->DZ<!--Delivery Zone--></N101>
+					<N103><!--66: Identification Code Qualifier-->ZN<!--Zone--></N103>
+					<N104><!--67: Identification Code-->00</N104>
+				</N1>
+				<N4>
+					<N402><!--156: State or Province Code-->PR</N402>
+					<N405><!--309: Location Qualifier-->DE<!--Destination (Shipping)--></N405>
+				</N4>
+			</GROUP_4>
+		</GROUP_2>
+		<CTT>
+			<CTT01><!--354: Number of Line Items-->2</CTT01>
+		</CTT>
+		<SE>
+			<SE01><!--96: Number of Included Segments-->62</SE01>
+			<SE02><!--329: Transaction Set Control Number-->371CDFCE</SE02>
+		</SE>
+	</TS_832>
+	<GE>
+		<GE01><!--97: Number of Transaction Sets-->1</GE01>
+		<GE02><!--28: Group Control Number-->924639182</GE02>
+	</GE>
+	<IEA>
+		<IEA01><!--I16: Number of Included Functional-->1</IEA01>
+		<IEA02><!--I12: Interchange Control Number-->924639182</IEA02>
+	</IEA>
+</X12>

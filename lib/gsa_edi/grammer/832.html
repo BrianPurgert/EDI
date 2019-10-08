@@ -1,0 +1,1891 @@
+832 Sample Set
+Sample 832 Transaction (Ver/Rel 3050) Vendor Catalog data for GSA Advantage! - PART I. BASIC DATA
+						
+							posSEGMENT
+							TRANSLATION (all data for illustration only)
+							
+							1/010ST*832*12345&gt;
+							This is an 832 and the control number assigned by the sender/contractor is 12345 
+							
+							1/020BCT*CP*GOV56789********00&gt;
+							This is original Government pricelist number GOV56789.  It has no revision number, does not supersede a previous pricelist.      [*]        
+							
+							1/050REF*GC*GS99F2345X&gt;
+							The Government contract number for this pricelist is GS-99F-2345X.
+							
+							1/050REF*W6*27 III F&gt;
+							The Federal Supply Schedule number is FSC 27, Part III, Section F.
+							
+							1/070DTM*007*951101***19&gt;
+							The effective date for the pricelist is November 1, 1995.
+							
+							1/080CTB*OR****MO*25000&gt;
+							Minimum order dollar value accepted is $250 for any item(s).
+							
+							1/080CTB*OR*27-500, 27-6***MA*2500000&gt;
+							The Maximum Order for SIN 27-500,and 27-6 is $25,000. 
+							
+							1/110ITD***2.5**10*********N&gt;
+							Prompt Payment discount is 2 1/2 % for payment in 10 days for all items.  Government IMPAC purchase card is accepted.
+							
+							1/120LDT*AF*45*DA&gt;
+							Delivery will be 45 calendar days after receipt of order for all items.
+							
+							1/140FOB*PS*DE&gt;
+							Transportation is paid by seller to destination.
+							
+							1/150N1*40**1*012966339&gt;
+							Receiver (GSA, FSS) identified by ACTUAL DUNS of 012966339. 
+							
+							1/150N1*SE**1*123456789&gt;
+							Contractor ABC Company is identified by the DUNS of 123456789.
+							
+							1/150N1*DZ**ZN*CONUS&gt;
+							Delivery Zone for all items on this contract is the Continental US[*]
+							
+							1/190REF*4A*12345&gt;
+							PIN given to contractor by FSS Vendor Support Center is 12345.[*]
+							
+							1/200PER*OD**TE*8001234567*FX*8001234568*EM*abc@abc.com&gt;
+							Order Department telephone is 800-123-4567.  Fax number is 800-123-4568.  Their Email address is abc@abc.com.
+							
+							1/200PER*AC*Bob Jones*TE*8002345678*
+							
+							FX*8008765432*EM*abc@abc.com&gt;
+							Contractor's Contract Administration Contact is Bob Jones, telephone 800-234-5678. Fax  800-876-5432. Email abc@abc.com.
+							
+							1/200PER*1A*Mary Smith*TE*8003456789*
+							
+							FX*8009876543*EM*abc@abc.com&gt;
+							Contractor's Contact for Repricing is Mary Smith, telephone 800-345-6789. Fax  800-987-6543. Email abc@abc.com.                  [*]
+							
+							1/150N1*RI**1*345678912&gt;
+							Contractor's remittance (if not same as Contractor Registration Database, or to specify one of several in the CCR) is identified by  DUNS of 345678912.
+							
+							2/010LIN**MF*123456789*MG*12AX34*ZZ*ABC Company*PD*A-1 Widget* CH*FR*CL*blue*PI*27-2&gt;
+							First item is manufactured by ABC Inc. (identified by the DUNS 123456789) as part number 12AX34.  The Manufacturer's Product Name is A-1 Widget.  It is made in France.  Color is blue.   Special Item Number is 27-2.                                                                  [*]
+							
+							2/070PID*S*08*GS*aabbbcbe&gt;
+							The Product Code (P-code) assigned by GSA is aabbbcbe. 
+							
+							2/070PID*F****Widget provides an improved surface for all uses.&gt;
+							A free-form description of up to 80 characters.  (If more than 80 characters are necessary, multiple PID segments can be used)
+							
+							2/080MEA*DE*TT*90*DA&gt;
+							Item is warranted against defects for 90 days.
+							
+							2/100PO4*24*10*OZ*UNT**1*LB*1*CF*12*6*24*IN&gt;
+							There are 24 10 ounce widgets in a container.  Unit weight is 1 pound and it is 1 cubic feet.  The dimensions are 12 in. long, 6 inches wide and 24 inches high.
+							
+							2/170CTP**D01*12.95*1*EA&gt;
+							The Federal Supply Schedule price is $12.95 for 1 each.
+							
+							2/170CTP**MSR*25.00&gt;
+							The list price on which the contract price is based is $25.00.
+							
+							3/010CTT*1&gt;
+							There is one line item in this pricelist.
+							
+							3/020SE*27*12345&gt;
+							There are 27 segments in transaction; control number is 12345.    [*]
+							
+						
+					
+					
+					NOTE For ease of reading, samples use "*" element separators and ">" segment terminators. Actual transmissions use non-printing characters specified by Federal Implementation Convention, Pt 10: hexadecimal 1C=terminator, 1D=element separator, 1F= component separator [*]
+					
+						832 DATA WHICH WILL BE EDITED BEFORE CONTRACTING OFFICER REVIEW - PRIOR TO LOADING TO GSA ADVANTAGE!
+						
+							DATAEXPECTATION | NOTES
+							Error Condition(s)
+							 (DE 647 in TS 824) 
+							
+							AccessoriesLIN segment must have an F7 qualifier with the Part Number of the base product.  There must also be an LIN for this base product
+							No Pcode is provided for accessory items unless they generate substantial sales on their own.
+							011 - Not Matching
+							
+							 If there is no LIN for the P/N listed as F7
+							
+							Accessories for multiple products
+							LIN will be repeated to provide additional F7 references.
+							Use LIN01 to assign a unique index to the Accessory.  Repeat the same index in all other LIN for that Accessory to allow program to group
+							[*]
+							ChangesAny change must cite the Mod # that authorized it in REF (92 qualifier). Adds, Changes &amp; Deletes to items can be in the same file. 
+							Line item changes require transmission of the entire LIN loop to ensure accurate processing
+							INC if missing              [*]
+							
+							Changes, Temporary/ promotional
+							BCT10 should be 42, REF02 needs a promotion number as qualifier PD and 2 DTMs provide timeframe
+							Temporary price changes should be a separate file
+							INC if missing              [*]
+							
+							Contract Administration POC &amp; Phone
+							Required in PER of the Sender N1 loop using  AC qualifier. Name is required; (vendor POC not GSA)
+							This is the contact for the GSA Contracting Officer
+							INC if missing             [*]
+							
+							Country of OriginMust be carried at the header in N1 using CT if same for all items or in LIN with CH if varies by item.  Must be a designated country
+							Table of Designated Countries on FSS VSC Bulletin Board
+							
+							Not Required for Services (where LIN qualifier = SV)
+							011- Not Matching Table
+							
+							INC if missing               [*]
+							
+							DatesEffective date must be prior to the contract expiration
+							Can be date of pricelist or contract begin date, whichever is later. (Exp no longer required)
+							008 - Out of Range        [*]
+							
+							DealersList DL in N1 if authorized for orders AND payment.  If take orders, PER must have fax.  If only take orders use PL and include PER with fax. If they provide service only use 56 qualifier and SE in the corresponding PER.
+							Use DUNS if registered in CCR, else include full name and address.  All locations should be in CCR so GSA knows EDI capabilities.  Any address that will receive orders should have BOTH a telephone and fax number.
+							011 if only list DUNS and not in CCR                    [*]
+							
+							Delivery TimeMust be in Table One unless varies by item, then use Table Two Detail 
+							Table One value will be the default
+							INC if missing
+							Descriptive DataShould be provided in text in PID and/or with measurements in PO4
+							Displayed if agency &quot;clicks&quot; to see detail beyond product name.  Characters should be kept to 500 maximum.  Add'l info should be submitted in Transaction Set 864 using listed text qualifiers
+							[*]
+							EDI POCIndicate the POC for the EDI data in the PER at 1/200 using EA qualifier
+							Default will be the POC in the CCR, but preferable to list here
+							[*]
+							Extended WarrantyIf can be added for a charge, indicate in SLN.  If it has additional charges, provisions or features, provide it in a separate LIN to enable use of CTP/SAC/SLN data
+							[*]
+							Federal Supply Schedule Number
+							Must be in 
+							
+							the Table One Header REF segment and be valid per contract
+							Table of valid numbers on Vendor Support Center (VSC) Bulletin Board
+							
+							 
+							INC if missing
+							
+							011- Not Matching Table
+							
+							FOBMust be Table One  unless varies by item, then use Table Two Detail level
+							Table One value will be the default
+							INC if missing
+							FOB OriginMust include the item weight in PO4
+							Weight needed for GBL preparation, freight determination
+							INC if missing             [*]
+							
+						
+					
+					
+					
+					
+						832 DATA WHICH WILL BE EDITED BEFORE CONTRACTING OFFICER REVIEW - PRIOR TO LOADING TO GSA ADVANTAGE! (con't)
+						
+							DATAEXPECTATION | NOTES
+							Error Condition(s)
+							 (DE 647 in TS 824) 
+							
+							GSA Contract NumberMust be in the Table One Header REF segment and valid
+							This is also part of the key to match the file for changes 
+							INC if missing    
+							
+							IID - if invalid
+							
+							Item Qualifiers in LIN segment
+							Contract number &amp; part number must  match file on change/deletion
+							On additions this key must NOT match
+							011- Not Matching Table
+							
+							006-Duplicate (additions)
+							
+							Item Qualifiers in LIN segment
+							Manufacturer must be named using ZZ qualifier.
+							To assist in standard spelling, table of manufacturers available on FSS VSC Bulletin Board If DUNS is known, include using MF
+							INC if missing
+							Item Qualifiers in LIN segment
+							Must use the MG qualifier for the manufacturer's part number in one pairing of the DE 235/234
+							Each part number in a pricelist/contract must be unique.  Different colors, sizes, etc. must have unique part numbers.
+							006 if same P/N is repeated with another Pcode
+							
+							Item Qualifiers in LIN segment
+							Discontinued part numbers are only used for rental, maintenance or as a cross-reference to the replacement.
+							If the LIN has a SV qualifier, there may be no MF if there is a REF with a QX
+							012-Invalid Combination
+							
+							Item Qualifiers in LIN segment
+							Special Item Number (PI) must be valid and correspond to contract
+							Table of valid numbers on VSC Bulletin Board
+							INC if missing
+							
+							011- Not Matching Table
+							
+							Item Qualifiers in LIN segment
+							Product Name  should be identified by PD.  This will be listed on screen when items are in columnar format
+							Use of abc, xxx, xyz, etc., to avoid this edit will hinder agencies' ability to compare products.
+							INC if missing               [*]
+							
+							Item Qualifiers in LIN segment
+							Vendor Part Number, UPC, Color, etc. are optional. 
+							Include if required on purchase orders. Qualifiers present will be maintained in P01 of 850 (order)
+							
+							Line Item Sequence #Must either use LIN01 to number ALL lines in a pricelist submission, or leave LIN01 blank on ALL lines in the submission; cannot have some lines with LIN01 and some without.
+							If the same number is in LIN01 for more than 1 LIN, data will be combined.  E.G., if multiple end-items, colors, etc. exceed the number of pairings available in a single LIN, they are linked by matching LIN01.
+							012-Invalid Combo      [*]
+							Maximum OrderMust be in Table One Header, listing SINs. Must be valid for the item/schedule.  Must be greater than Minimum
+							If varies by SIN, indicate the applicable SINs in CTB02 and use multiple CTB segments to cover all SINs.  Separate SINs by commas within CTB02.  Valid MO table is available from the VSC website.
+							INC if missing
+							
+							008- Out of Range if less than the Minimum         [*]
+							
+							Minimum ValueMust be in Table One (contract level) unless varies by item, then use Table Two Detail level
+							Table One value will be the default; NOTE: If no minimum, indicate 0 (zero)
+							INC if missing
+							Options (Subitems)Must have category in SLN03/04 (CN qualifier), brief description (PD qualifier), and mfr/part number. 
+							See samples of options that can be substituted, added or deleted. Category should be specific enough to ensure one choice per category not &quot;peripherals&quot;, e.g.  
+							INC if missing               [*]
+							
+							Options -Choice from a group
+							Options coded with O must specify number of choices allowed in SLN04
+							012-Invalid Combo      [*]
+							
+							Options - Subitem identification
+							Use a number in SLN01 if there will be multiple SLNs for choices
+							SLN01 number will be used for grouping
+							INC if missing               [*]
+							
+							Options-Substitutions
+							Category with a Substitute must have an Included Subitem in same category
+							012-Invalid Combo      [*]
+							
+							Order DepartmentMust have a phone and fax
+							
+							 (also on Dealers if they take orders)
+							Required for agency follow-up and for those who receive fax orders 
+							INC if missing
+							PasswordMust be in N1 REF using 4A qualifier
+							Register with the FSS Vendor Support Center to receive a password. 
+							IID - Invalid ID Code    [*]
+							
+							Price Change POCSubmit in PER with qualifier 1A, including phone as minimum
+							This contact displayed for agency to call for possible lower prices, eg when orders over MO threshold
+							INC if missing [*]
+							
+						
+					
+					
+					
+						832 DATA WHICH WILL BE EDITED BEFORE CONTRACTING OFFICER REVIEW - PRIOR TO LOADING TO GSA ADVANTAGE! (con't)
+						
+							DATA EXPECTATION | NOTES
+							Error Condition(s)
+							 (DE 647 in TS 824) 
+							
+							Pricelist NumberShould be a unique number assigned by the vendor
+							This number will be part of the file key for matching future changes.
+							006-Duplicate (adds)     [*]
+							
+							PricingSubmit Base price as MSR qualifier
+							Certain schedules may be exempt
+							INC if missing
+							PricingGSA contract price (D01 qualifier) must be submitted and be less than the base list price (MSR qualifier).  
+							Contracting Officer reviews to ensure discount matches negotiated terms. Agencies only see contract price.
+							INC if missing (either)
+							
+							008 - Out of Range if discount incorrect
+							
+							PricingQuantity Break Prices must be less than the Contract Price
+							008 - Out of Range
+							
+							PricingTemp Prices can't exceed Contract Price
+							Do not combine temp prices in same  transmission with other changes requiring approval
+							008 - Out of Range        [*]
+							
+							PricingCTP04 and CTP05 are required for the GSA price
+							Unit Quantity and Measurement the price covers must be displayed
+							INC if missing
+							Product Code (Pcode)Must be in PID as indicated and be valid. Not required for accessories or services unless provided.  Do NOT Pcode Accessories if they cannot be ordered separately; use Options.
+							Table of valid codes on FSS VSC Bulletin Board for download.  NOTE:  If P-code exceeds PID04, carry over into PID05
+							INC if missing
+							
+							011- Not Matching Table
+							
+							RemittanceOnly required if specifying one of several given in CCR or if not yet in CCR 
+							Use DUNS if in CCR, else provide address for check (NOTE: new law phasing in requirement for EFT; EFT data is be stored in CCR)
+							011 if only list DUNS and not in CCR
+							
+							813 if not in CCR          [*]
+							
+							Revision NumberUse an incremental number
+							Do not use dates as the Revision Number
+							[*]
+							SenderMust be in an N1
+							Use DUNS if registered in CCR, else include full address
+							INC if missing
+							Service 'Names'Designations are up to the contractor (LIN02 qualifier is SV)
+							Name should clearly identify the service and be suitable for order identification
+							[*]
+							Standardized Features 
+							PID04 Must match codes provided by GSA.   (Certain features may be required to be reported by the contract e.g. Y2K compliance)
+							Table of valid codes on FSS VSC Bulletin Board  If the feature is &quot;other&quot; use X in PID01 (not S) and describe feature in PID05
+							011- Not Matching
+							
+							 Table                            [*]
+							
+							UN Country CodesSee ASC X12 Appendix A for sources of codes
+							Applicable to Ports, and Countries
+							011- Not Matching 
+							
+							Table                             [*]
+							
+							Unit of MeasureMust be present for prices. Whenever present should match GSA values; some conversion will be done
+							Table of valid codes on FSS VSC Bulletin Board
+							H - Missing or Invalid Unit of Measure
+							
+							WarrantiesIf warranty applies (MEA01=DE), time period must be specified in MEA03-MEA04
+							May expand on warranty in the PID using the WD qualifier in PID02
+							INC if missing
+							ZonesDesignations (number, letter, etc.) are up to the contractor
+							Zone identity should be the same for the N1, CTP and SAC to ensure correct price display.  A zone cited in CTP must have been defined in an N1
+							INC if missing              [*]
+							
+						
+					
+					
+					
+						INDEX TO DATA EXAMPLES IN PT II:
+						
+							Dealers1, 12, 31, 45
+							[*]Pricing, zonal
+							2, 32
+							AccessoriesPt V[*]
+							RentalPt IV
+							[*]
+							
+							Repricing contactBasic
+							[*]
+							Addresses, Ordering21
+							Servicing Dealers
+							31, 45[*]
+							ChangesPt III[*]
+							Shipment terms25
+							
+							
+							State/Local Government Orders40
+							[*]
+							Charges, Extra 15, 26, 32
+							Subitems
+							Pt V[*]
+							ComponentsPt V[*]
+							Tax, Sales14
+							
+							
+							Text Transactions (864),  link to20
+							[*]
+							Country of Origin30
+							Transportation charges
+							6
+							Currency Other than US27
+							Warranty data
+							23, 29
+							Deletion of PricelistPt III
+							[*]Website, vendor
+							28[*]
+							Delivery Days13
+							Zones for countries, world, CONUS
+							35, 36, 42, 43[*]
+							Discount, volume24, 38, 39, 41, 44
+							[*]Zones, services or other charges 
+							32
+							Features, GSA17
+							
+							
+							FOB7, 9,33,34,35,37
+							[*]
+							
+							Free goods (promotion)part III
+							[*]
+							
+							Hazardous8
+							
+							
+							Homepage, vendor28[*]
+							
+							
+							IMPAC, discount for use18
+							
+							
+							Increments for Orders, Dollars5
+							
+							
+							Increments for Orders, Quantity 4
+							
+							
+							Leasing Pt IV[*]
+							
+							
+							MaintenancePt IV
+							
+							
+							Maximum Order by SIN11
+							[*]
+							
+							Minimum Quantity10
+							
+							
+							Modification (contract) numberPart III
+							[*]
+							
+							National Stock Numbers16
+							
+							
+							New Contract/contract periodPart III I
+							[*]
+							
+							Optional ItemsPt V[*]
+							
+							
+							Part Number, Vendor (not Mfr.)22
+							
+							
+							PasswordBasic[*]
+							
+							
+							Pricing, quantity discounts 3
+							
+							
+							Pricing Incremental discounts39
+							[*]
+							
+							Pricing, $Volume range discounts44
+							[*]
+							
+							
+							PART II -  &quot;AS APPLICABLE&quot; DATA  (Insert at Position Indicated)
+							
+							posSEGMENT
+							TRANSLATION (all data for illustration only)
+							
+							
+							
+							1.  IF THERE ARE PARTICIPATING  DEALERS/ORDERING OFFICES/SALES
+							AGENTS
+							
+							1/150N1*DL**1*123456666&gt;
+							Dealer authorized to receive orders is A1 Inc.,  DUNS 123456666.
+							
+							
+							
+							2.  IF THERE IS ZONAL PRICING
+							
+							1/150N1*DZ**ZN*01&gt;
+							There is a delivery zone 01.
+							
+							1/180N4**CA&gt;
+							California is in zone 01.
+							
+							2/170CTP**ZNP*22.95*1*EA*****01&gt;
+							The zonal price is $22.95 for zone 01.
+							
+							
+							
+							3.  IF THERE ARE QUANTITY BREAKS
+							
+							2/170CTP**PBQ**1*EA&gt;
+							The lowest quantity the price covers is 1 each
+							
+							2/170CTP**ICL*10.95*50*EA&gt;
+							The price is $10.95 and it continues through a quantity of 50 each.
+							
+							2/170CTP**ICL*9.95*100*EA&gt;
+							The next price of $9.95 goes from 51 to 100 each.
+							
+							2/170CTP**MAX*8.95*101*EA&gt;
+							For quantities of 101 and higher, the price remains at $8.95.
+							
+							
+							
+							4.  IF ORDERS MUST BE IN CERTAIN INCREMENTS OF QUANTITY
+							
+							2/060CTB*OR**57*24&gt;
+							When ordering this item, minimum quantity is 24.
+							
+							2/060CTB*OR**69*24&gt;
+							When ordering this item, quantities must be in increments of 24.
+							
+							
+							
+							5.  IF ORDERS MUST BE IN CERTAIN INCREMENTS OF DOLLARS
+							
+							2/060CTB*OR****MO*10000&gt;
+							When ordering this item, values must be at least $100.
+							
+							2/060CTB*OR****KQ*10000&gt;
+							When ordering this item, values must be in increments of $100.
+							
+							
+							
+							6.  IF TRANSPORTATION WILL BE ADDED AS A SEPARATE INVOICE ITEM
+							
+							1/140FOB*PP*OR&gt;
+							Transportation pd by seller, added to invoice but, not in item price.
+							
+							
+							
+							7.  IF ITEMS ARE FOB ORIGIN
+							
+							
+							
+							1/140FOB*BP*OR&gt;
+							Transportation paid by buyer from origin by GBL. 
+							
+							
+							
+							8.  IF THERE ARE HAZARDOUS ITEMS
+							
+							
+							
+							2/110TD4*FL*D*FL&gt;
+							Item is flammable, coded by DOT as Hazardous Material Class FL.
+							
+							
+							
+							9.  IF FOB VARIES BY ITEM (use Table 2)
+							
+							
+							
+							2/160FOB*PS*DE&gt;
+							Transportation for this item is paid by seller to destination.
+							
+							
+							
+							10.  IF MINIMUM QUANTITY VARIES FOR AN ITEM (use Table 2)
+							
+							
+							
+							2/060CTB*OR**57*25&gt;
+							The minimum quantity for this item is 25.
+							
+							
+							
+							11.  IF MAXIMUM VARIES BY SPECIAL  ITEM NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[*]
+							 
+							
+							1/080CTB*OR*27-500, 27-6***MA*2500000&gt;
+							The Maximum Order for SIN 27-500,and 27-6 is $25,000. 
+							
+							1/080CTB*OR*27-36, 27-89***MA*5000000&gt;
+							The Maximum Order for SIN 27-36,and 27-89 is $50,000. 
+							
+							
+							
+							12.  IF DEALER VARIES BY ITEM (use Table 2)
+							
+							2/230N1*DL**1*123455555&gt;
+							Dealer on this item is K9 &amp; Co., identified by  DUNS 123455555.
+							
+							
+							
+							13.  IF DELIVERY DAYS VARIES BY ITEM (use Table 2)
+							
+							
+							
+							2/140LDT*AF*60*DA&gt;
+							Delivery for this item will be 60 calendar days after receipt of order.
+							
+							
+							
+							14.  IF STATE REQUIRES SALES TAX (SAC if contract level; TXI
+							if by item)
+							
+							1/130SAC*C*H750****Z*5*****CA&gt;
+							State tax of 5% should be added to each invoice.
+							
+							2/166TXI*FT*2*****A&gt;
+							Federal Excise Tax of $2.00 will be added to the price of the item[*]
+							
+							
+							
+							15.  IF THERE ARE EXTRA SERVICES AVAILABLE (BY ITEM)-EXAMPLES
+							
+							2/150SAC*C*D820****5*2&gt;
+							Inside delivery is available for 2% additional to the unit price.
+							
+							2/150SAC*C*E930***2500&gt;
+							One day delivery is available for an extra $25.00.
+							
+							
+							
+							16.  IF ITEM HAS A NATIONAL STOCK NUMBER (NSN)
+							
+							2/010LIN**MF*123456789*MG*12AX34*ZZ*ABC Company*FS*2799001234567*PD*
+							
+							A-1 Widget*CH*FR*CL*blue*PI*27-2&gt;
+							Item made by ABC Inc. (identified by DUNS 123456789) as part No. 12AX34. NSN is 2799-00-123-4567.  Mfr's Product Name is A-1 Widget.  Made in France.  Color blue.  Special Item Number 27-2.
+							
+							
+							
+							17.  IF THERE ARE FEATURES STANDARDIZED BY GSA
+							
+							2/070PID*S*12*GS*E1&gt;
+							Item complies with GSA environmental feature E1: Low VOC
+							
+							
+							
+							PART II -  &quot;AS APPLICABLE&quot; DATA  (Insert
+							at Position Indicated)  CON'T
+							
+							
+							
+							posSEGMENT
+							TRANSLATION (all data for illustration only)
+							
+							
+							
+							18.  IF DISCOUNT IS OFFERED FOR USE OF IMPAC (GOVERNMENT CARD)
+							
+							1/130SAC*A*C260****2*1&gt;
+							The discount offered if payment is by the IMPAC card is 1%.    [*]
+							
+							
+							
+							19.  IF THE ITEM IS A SERVICE (no PO4 required)
+							
+							2/010LIN**SV*Grass Cutting*PI*27-10&gt;
+							Item is Grass Cutting services, Special Item Number 27-10.
+							
+							2/070PID*S*08*GS*aabbbcbf&gt;
+							The GSA P-code is aabbbcbf.
+							
+							2/170CTP**LAR*25.00*1*HR&gt;
+							The labor rate is $25.00 per hour.
+							
+							
+							
+							20.  IF THERE ARE OTHER RELATED TRANSACTIONS              
+							                                         [*]
+							
+							1/050
+							2/040REF*TN*23456*864&gt;
+							864 Text Message relating to this 832 is Reference Number 23456.
+							
+							
+							
+							21.  IF ORDERS SHOULD GO TO OTHER THAN THE SELLER ADDRESS
+							
+							
+							
+							1/150N1*PL**1*345678901&gt;
+							All orders go to DUNS 345678901 if not in CCR,give name/address
+							
+							
+							
+							22. IF THE CONTRACTOR USES A NUMBER OTHER THAN MFR P/N
+							
+							
+							
+							2/010LIN**ZZ*ABC Inc.*MF*123456789*
+							
+							MG*12AX34*VP*XWX789**UP*11234512345123451*PD*A-1 Widget *CH*FR*CL*blue*PI*27-2&gt;
+							Item is manufactured by ABC Inc. (also identified by DUNS 123456789) as part number 12AX34.  Contractor sells it as his part number XWX789. Uniform Product Code is 1 12345 12345 12345 1. The Manufacturer's Product Name is A-1 Widget.  It is made in France.  Color is blue.   Special Item Number is 27-2.
+							
+							
+							
+							23.  IF THERE ARE OTHER TYPES OF WARRANTIES OR ADDITIONAL INFO
+							
+							2/070PID*F*WD***Labor Warranty
+							Indicates that there is a warranty for labor.
+							
+							2/080MEA*DE*TT*120*DA&gt;
+							Indicates the warranty period for the Labor.
+							
+							
+							
+							24.  IF THERE ARE OTHER  DISCOUNTS FOR COMBINED ITEMS, VOLUME
+							
+							1/130SAC*A*I530***1000000*2*5&gt;
+							Orders over $10,000 get 5% discount, regardless of item(s) [*]
+							
+							1/130SAC*A*D440****2*5**EA*100&gt;
+							Orders for 100 of any combination of items get additional 5% off. [*]
+							
+							
+							
+							25.  IF SHIPMENT (NOT DELIVERY) IS REQUIRED IN A SPECIFIED
+							TIME
+							
+							1/120LDT*AE*15*DA&gt;
+							Items will be shipped 15 days after receipt of order.
+							
+							
+							
+							26.  IF THERE ARE SPECIAL CHARGES BY QUANTITY RANGE
+							
+							2/150SAC*C*D820***1000****EA*1*10&gt;
+							Orders for 1 to 10 each can have Inside Delivery for a $10 charge.
+							
+							2/150SAC*C*D820***500****EA*11*25&gt;
+							Orders for 11 to 25 each can have Inside Delivery for a $5 charge.
+							
+							2/150SAC*N*D820*******EA*26&gt;
+							Orders for 26 or more  available for Inside Delivery at no charge.
+							
+							
+							
+							27.  IF NON-US CURRENCY ALLOWED BY CONTRACT
+							
+							1/090CUR*SE*CAN&gt;
+							All prices are in Canadian dollars.
+							
+							
+							
+							28.  IF THERE IS A WORLDWIDE WEB SITE FOR THESE PRODUCTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[*]
+							
+							
+							
+							1/050 2/040REF*ME**http://www.abc.com&gt;
+							There is a web site with graphics for the contract items at the address shown. Use REF at position 2/040 if URL for specific item 
+							
+							
+							
+							29.  IF EXTENDED WARRANTY IS AVAILABLE
+							
+							2/010LIN**ZZ*ABC Company*MF*123456789
+							
+							*MG*12AX34*PD*Eraser*PI*27-2&gt;
+							The item manufactured by ABC Company as part number 12AX34 .
+							
+							2/080MEA*DE*TT*90*DA&gt;
+							Standard warranty is 90 days
+							
+							2/170CTP**D01*10092.95*1*EA&gt;
+							The Federal Supply Schedule price is $10,092.95 for 1 each.
+							
+							2/228SAC*C*I590***25000****MO*12&gt;
+							Extended warranty for 12 months is $250.
+							
+							
+							
+							30.   IF THE  COUNTRY OF ORIGIN IS THE SAME FOR ALL ITEMS
+							
+							1/150N1*CT**38*FR&gt;
+							Country of Origin is France for all items
+							
+							
+							
+							31.  IF THERE ARE SERVICING LOCATIONS (use Table 1 or 2 as
+							appropriate)                   [*]
+							
+							2/230N1*56**1*123455555&gt;
+							Servicing Dealer for this item is ABC Co.,  DUNS 123455555.
+							
+							2/280PER*SE**TE*8881234567&gt;
+							Telephone number for service is 1-888-123-4567
+							
+							
+							
+							32.   IF THERE IS A DISCOUNT OR CHARGE FOR A ZONE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[*]
+							
+							2/150SAC*C*A320****5*2******zone 1&gt;
+							Orders in zone 1 have additional Air Transportation charge of 2% .
+							
+							
+							
+							posSEGMENT
+							TRANSLATION (all data for illustration only)
+							
+							
+							
+							33.   IF THE  FOB IS OTHER THAN ORIGIN OR DESTINATION, E.G.
+							A PORT                   [*]
+							
+							1/150N1*KX*Port of Baltimore&gt;
+							FOB point is Port of Baltimore
+							
+							1/180N4*****ZZ*12345 &gt;
+							UN/LOCODE for port/other location of FOB point is 12345
+							
+							
+							
+							34.   IF  FOB IS DESTINATION FOR 48 STATES &amp; ORIGIN FOR
+							OTHER LOCATIONS    [*]
+							
+							1/140FOB*PS*W&gt;
+							Transportation paid by seller to locations within continental United States; FOB Origin (paid by buyer) outside continental US
+							
+							
+							
+							35.   IF THE  FOB DIFFERS BY ZONE                         
+							                                                     [*]1/1/98
+							
+							1/150N1*DZ**ZN*10&gt;
+							There is a Delivery Zone 10
+							
+							1/180>N4*****DE&gt;
+							Zone 10 is FOB destination
+							
+							1/150N1*DZ**ZN*11&gt;
+							There is a Delivery Zone 11
+							
+							1/180N4*****OR&gt;
+							Zone 11 is FOB Origin
+							
+							
+							
+							36.   IF DELIVERY ZONES ARE COUNTRIES
+							
+							1/150N1*DZ**ZN*01&gt;
+							Delivery zone is 1
+							1/180N4****FR&gt;
+							France is in Delivery Zone 1
+							
+							
+							
+							37.   IF FOB VARIES FOR A STATE OR COUNTRY WITHIN A ZONE  
+							                    [*]1/1/98
+							
+							1/150N1*DZ**ZN*01&gt;
+							Delivery zone is 1
+							1/180N4**HA***OR&gt;
+							Hawaii is in Zone 1 and it is FOB Origin 
+							
+							1/150N1*DZ**ZN*01&gt;
+							Delivery zone is 1
+							1/180N4**AK***OA&gt;
+							Alaska is in Zone 1 and it is FOB Origin, prepay and add
+							
+							
+							
+							38.   IF THERE ARE DISCOUNTS FOR QUANTITY RANGES
+							
+							2/150SAC*A*F910****5*1**EA*101*500&gt;
+							Discount of 1% for quantities between 101 and 500,applied to total quantity ordered (eg 425)                                                              [*]
+							
+							
+							
+							39.   IF THERE ARE INCREMENTAL  DISCOUNTS FOR QUANTITY RANGES
+							
+							2/150SAC*A*C300****5*1**EA*11*50&gt;
+							Incremental discount of 1% for quantities between 11 and 50; the first 10 are priced at the basic contract price.                                [*]
+							
+							2/150SAC*A*C300****5*2**EA*51*100&gt;
+							Incremental discount of 2% for quantities between 51 and 100. First 10 priced at basic contract price, next 40 at 1% discount, and any amount between 51 and 100 receive additional 2% from basic   [*]
+							
+							
+							
+							40.   IF STATE /LOCAL GOVERNMENTS ORDERS NOT ACCEPTED (If Cong.
+							authorizes)
+							
+							1/080
+							
+							2/060
+							CTB*DW*Federal Scope&gt;
+							Only entities qualifying under Federal scope of contract can order.  Use Table 2 if varies by item.                                                      [*]
+							
+							
+							
+							41.   IF THERE IS A DISCOUNT FOR VOLUMES OVER A THRESHOLD FOR
+							AN ITEM
+							
+							
+							
+							2/150SAC*A*I530***5000000*5*2&gt;
+							Orders for over $50,000 of this item get additional 2% off.          [*]
+							
+							
+							
+							42.  IF ZONES (and terms) APPLY TO CERTAIN COUNTRIES AND OTHERS
+							 DIFFER
+							
+							1/150N1*DZ**ZN*1&gt;
+							There is a zone 1
+							1/180N4****FR&gt;
+							France is in Zone 1
+							1/150N1*DZ**ZN*world&gt;
+							There is a zone for the rest of the world
+							
+							
+							
+							43.  IF ZONES (and terms) APPLY TO CERTAIN STATES AND OTHERS
+							 DIFFER
+							
+							1/150N1*DZ**ZN*conus&gt;
+							Continental US is a zone
+							
+							1/150N1*DZ**ZN*1&gt;
+							There is a zone 1
+							1/180N4**HA&gt;
+							Hawaii is in zone 1 (Alaska would be labeled in another N1loop)
+							
+							
+							
+							44.  IF THERE ARE DOLLAR VOLUME BREAKS                    
+							                                                [*]
+							
+							2/170CTP**PBQ******50&gt;
+							The lowest volume the price covers is $50
+							
+							2/170CTP**ICL*50.00*****5000&gt;
+							The price is $50 and it continues through a volume of $5000
+							
+							2/170CTP**ICL*45.00*****10000&gt;
+							The next price of $45 goes from $5001 to $10,000.
+							
+							2/170CTP**MAX*43.00*****10001&gt;
+							For volume of $10,001 and higher, the price remains at $43.
+							
+							
+							
+							45.  IF THERE ARE SERVICING LOCATIONS THAT VARY BY ZONE   
+							                             [*]
+							
+						1/150N1*56**1*123455555&gt;
+						Servicing Dealer for this item is ABC Co.,  DUNS 123455555.
+						
+						1/180N4*****ZN*01&gt;
+						This dealer provides service for zone 1 (defined in another N1 loop)
+						
+						
+					
+					
+					
+						PART III - CHANGE EXAMPLES: Contract Number/Schedule Number always required; Part Number required if item change
+						
+							posSEGMENT
+							TRANSLATION (all data for illustration only)
+							
+							
+							
+							A.  PRICE CHANGE (Requires entire LIN Loop)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[*]
+							
+							1/010ST*832*12399&gt;
+							This is an 832.  Sender/contractor assigned control number is 12399
+							
+							1/020BCT*CP*GOV56789**01******04&gt;
+							This is  change to Government pricelist GOV56789, Revision 01 [*]
+							
+							1/050REF*GC*GS99F2345X&gt;
+							Government contract number for this pricelist is GS-99F-2345X.
+							
+							1/050REF*W6*27 III F&gt;
+							The Federal Supply Schedule number is FSC 27, Part III, Section F.
+							
+							1/050REF*92*37&gt;
+							This change was approved by Mod 37 to this contract.                 [*]
+							
+							1/070DTM*007*960101***19&gt;
+							The effective date for the change is January 1, 1996.
+							
+							1/150N1*SE**1*123456789&gt;
+							Contractor ABC Company is identified by the DUNS of 123456789.
+							
+							1/190REF*4A*12345&gt;
+							PIN given to contractor by FSS Vendor Support Center is 12345   [*]
+							
+							2/010LIN**ZZ*ABC Company*
+							
+							MF*123456789*MG*12AX34&gt;
+							The item being changed is ABC Company's part number 12AX34.
+							
+							2/015G53*001&gt;
+							This is a change to the item.
+							
+							2/030DTM*007*960101***19&gt;
+							Change is effective on January 1, 1996                                         [*]
+							
+							2/070PID*F****Widget All-purpose.&gt;
+							A free-form description of up to 80 characters.  (If more than 80 characters are necessary, multiple PID segments can be used)       [*]
+							
+							2/170CTP**D01*11.95*1*EA&gt;
+							The new Federal Supply Schedule price is $11.95.
+							
+							2/170CTP**MSR*50.00*1*EA&gt;
+							The basis of the price is $50.00                                                     [*]
+							
+							3/010CTT*1&gt;
+							There is one line item in this 832.
+							
+							3/020SE*16*12399&gt;
+							There are 16 segments in this 832 and the control number is 12399
+							
+							
+							
+							B.  TEMPORARY PRICE CHANGE / PROMOTIONAL
+							
+							1/010ST*832*12388&gt;
+							This is an 832.  Sender/contractor assigned control number is 12388
+							
+							1/020BCT*CP*GOV56789********42&gt;
+							This is a temporary change to Government pricelist GOV56789. [*]
+							
+							1/050REF*GC*GS99F2345X&gt;
+							Government contract number for this pricelist is GS-99F-2345X.
+							
+							1/050REF*PD*12&gt;
+							This is promotion number 12.
+							
+							1/050REF*W6*27 III F&gt;
+							Federal Supply Schedule number is FSC 27, Part III, Section F.
+							
+							1/070DTM*015*960101***19&gt;
+							The begin date for the temporary price is January 1, 1996.           [*]
+							
+							1/070DTM*016*960131***19&gt;
+							The date the temporary price ends is January 31, 1996                 [*]
+							
+							1/150N1*SE**1*123456789&gt;
+							Contractor ABC Company  identified by DUNS of 123456789    [*]
+							
+							1/190REF*4A*12345&gt;
+							PIN given to contractor by FSS Vendor Support Center is 12345 [*]
+							
+							2/010LIN**ZZ*ABC Company*
+							
+							MF*123456789*MG*12AX34&gt;
+							The item being changed is ABC Company's part number 12AX34.
+							
+							2/030DTM*007*960101***19&gt;
+							Promotion is effective on January 1, 1996
+							
+							2/170CTP**GTP*11.95*1*EA&gt;
+							The temporary Federal Supply Schedule price is $11.95.
+							
+							3/010CTT*1&gt;
+							There is one line item in this 832.
+							
+							3/020SE*13*12388&gt;
+							There are 13 segments in this 832; the control number is 12388.[*]
+							
+							
+							
+							C.  REPLACEMENT PRICELIST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[*]
+							
+							1/010ST*832*12344&gt;
+							This is an 832.  Sender/contractor assigned control number is 12344
+							
+							1/020BCT*CP*GOV89123****GOV456789****05&gt;
+							Pricelist GOV89123 replaces the GOV456789                              [*]
+							
+							1/050REF*92*39&gt;
+							This change was approved by Mod 39 to this contract.                  [*]
+							
+							.......follows original 832 format.....
+							
+							3/020SE*25*12344&gt;
+							There are 25 segments in this 832 and the control number is 12344.
+							
+							
+							
+							
+							posSEGMENT
+							TRANSLATION (all data for illustration only)
+							
+							
+							
+							D.  OTHER CHANGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[*]
+							
+							1/010ST*832*12377&gt;
+							This is an 832.  Sender/contractor assigned control number is 12377
+							
+							1/020BCT*CP*GOV56789**01******04&gt;
+							This revision one is a change to GOV56789.
+							
+							1/050REF*GC*GS99F2345X&gt;
+							Government contract number for this pricelist is GS-99F-2345X.
+							
+							1/050REF*W6*27 III F&gt;
+							Federal Supply Schedule number is FSC 27, Part III, Section F.    
+							
+							1/050REF*92*38&gt;
+							This change was approved by Mod 38 to this contract.                  
+							
+							1/080CTB*OR****MO*50000&gt;
+							Minimum order dollar value accepted is $500 for any item(s).
+							
+							1/080CTB*OR****MA*75000000&gt;
+							Maximum Order amount  is $750,000 for any item or combination.
+							
+							1/150N1*SE**1*123456789&gt;
+							Contractor ABC Company is identified by DUNS of 123456789.   
+							
+							1/190REF*4A*12345&gt;
+							PIN given to contractor by FSS Vendor Support Center is 12345. 
+							
+							3/010CTT*0&gt;
+							There are no line items in this 832.                                               
+							
+							3/020SE*11*12377&gt;
+							There are 11 segments in this 832 and the control number is 12377.
+							
+							
+							
+							E.  DELETING ONE SEGMENT OF DATA E.G. DEALER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[*]
+							
+							1/010ST*832*12333&gt;
+							This is an 832.  Sender/contractor assigned control number is 12333
+							
+							1/020BCT*CP*GOV56789**01******03&gt;
+							This is revision 01 to pricelist GOV56789.  It deletes the segments that follow                                                                                 
+							
+							1/050REF*GC*GS99F2345X&gt;
+							Government contract number for this pricelist is GS-99F-2345X.
+							
+							1/050REF*W6*27 III F&gt;
+							Federal Supply Schedule number is FSC 27, Part III, Section F     
+							
+							1/050REF*92*40&gt;
+							This change was approved by Mod 40 to this contract.                  
+							
+							1/150N1*SE**1*123456789&gt;
+							Contractor ABC Company is identified by DUNS of 123456789    
+							
+							1/190REF*4A*12345&gt;
+							PIN given to contractor by FSS Vendor Support Center is 12345. 
+							
+							1/150N1*DL**1*123456666&gt;
+							Dealer no longer authorized to receive orders is A1 Inc.,  DUNS 123456666.
+							
+							3/010CTT*0&gt;
+							There are no line items in this 832.                                               
+							
+							3/020SE*10*12333&gt;
+							There are 10 segments in this 832 and the control number is 12333
+							
+							
+							
+							F.  DELETING AN ITEM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							                      [*]
+							
+							1/010ST*832*12366&gt;
+							This is an 832.  Sender/contractor assigned control number is 12366
+							
+							1/020BCT*CP*GOV89123**02******03&gt;
+							This is revision 2 to pricelist GOV89123 deleting following data
+							
+							1/050REF*GC*GS99F2345X&gt;
+							Government contract number for this pricelist is GS-99F-2345X.
+							
+							1/050REF*W6*27 III F&gt;
+							The Federal Supply Schedule number is FSC 27, Part III, Section F. 
+							
+							1/050REF*92*41&gt;
+							This change was approved by Mod 41 to this contract 
+							
+							1/150N1*SE**1*123456789&gt;
+							Contractor ABC Company is identified by the DUNS of 123456789. 
+							
+							1/190REF*4A*12345&gt;
+							PIN given to contractor by FSS Vendor Support Center is 12345. 
+							
+							2/010LIN**ZZ*ABC Company*
+							
+							MF*123456789*MG*12AX34&gt;
+							The item is ABC Company's part number 12AX34.
+							
+							2/015G53*002&gt;
+							This is a deletion of an item
+							
+							2/030DTM*007*960101&gt;
+							The effective date of the change is January 1, 1996
+							
+							3/010CTT*1&gt;
+							There is one line item in this 832. 
+							
+							3/020SE*12*12366&gt;
+							There are 12 segments in this 832 and the control number is 12366.
+							
+							
+							
+							
+							posSEGMENT
+							TRANSLATION (all data for illustration only)
+							
+							
+							
+							G.  ADDING AN ITEM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[*]
+							
+							1/010ST*832*12355&gt;
+							This is an 832.  Sender/contractor assigned control number is 12355
+							
+							1/020BCT*CP*GOV89123**02******02&gt;
+							This is a revision 02 to pricelist GOV89123 to add data as follows.
+							
+							1/050REF*GC*GS99F2345X&gt;
+							Government contract number for this pricelist is GS-99F-2345X.
+							
+							1/050REF*W6*27 III F&gt;
+							Federal Supply Schedule number is FSC 27, Part III, Section F.    [*]
+							
+							1/050REF*92*42&gt;
+							This change was approved by Mod 42 to this contract.                   [*]
+							
+							1/150N1*SE**1*123456789&gt;
+							Contractor ABC Company identified by the DUNS of 123456789 [*] 
+							
+							1/190REF*4A*12345&gt;
+							PIN given to contractor by FSS Vendor Support Center is 12345   [*] 
+							
+							2/010LIN**MF*123456789*MG*13AX34*ZZ*ABC Company*PD*A-1 Gadget* CH*FR*CL*blue*PI*27-2&gt;
+							Additional item is manufactured by ABC Inc. (identified by the DUNS 123456789) as part number 13AX34.  The Manufacturer's Product Name is A-1 Gadget.  It is made in France.  Color is blue.   Special Item Number is 27-2.
+							
+							2/015G53*021&gt;
+							This is an additional item
+							
+							2/030DTM*007*960101&gt;
+							The effective date of the change is January 1, 1996
+							
+							2/070PID*S*08*GS*aabbbcbe&gt;
+							The Product Code (P-code) assigned by GSA is aabbbcbe. 
+							
+							2/070PID*F****Widget provides an improved surface for all uses.&gt;
+							A free-form description of up to 80 characters.  (If more than 80 characters are necessary, multiple PID segments can be used)
+							
+							2/080MEA*DE*TT*90*DA&gt;
+							Item is warranted against defects for 90 days.
+							
+							2/100PO4*24*10*OZ*UNT**1*LB*1*CF*12*6*24*IN&gt;
+							There are 24 10 ounce widgets in a container.  Unit weight is 1 pound and it is 1 cubic feet.  The dimensions are 12 in. long, 6 inches wide and 24 inches high.
+							
+							2/170CTP**D01*12.95*1*EA&gt;
+							The Federal Supply Schedule price is $12.95 for 1 each.
+							
+							2/170CTP**MSR*25.00*1*EA&gt;
+							The list price on which the contract price is based is $25.00.
+							
+							3/010CTT*1&gt;
+							There is one line item in this 832                                                    [*]
+							
+							3/020SE*18*12355&gt;
+							There are 18 segments in this 832 and the control number is 12355.
+							
+						
+					
+					
+					
+						DELETING AN ENTIRE PRICELIST [*]
+						
+							1/010ST*832*12344&gt;
+							This is an 832.  Sender/contractor assigned control number is 12344
+							
+							1/020BCT*CP*GOV89123****Delete****05&gt;
+							Pricelist GOV89123  is deleted 
+							
+							1/050REF*GC*GS99F2345X&gt;
+							Government contract number for this pricelist is GS-99F-2345X.
+							
+							1/050REF*W6*27 III F&gt;
+							The Federal Supply Schedule number is FSC 27, Part III, Section F.
+							
+							1/050REF*92*39&gt;
+							This change approved by Mod 39 to this contract.(if applicable)  
+							
+							1/150N1*SE**1*123456789&gt;
+							Contractor ABC Company is identified by the DUNS of 123456789.
+							
+							1/190REF*4A*12345&gt;
+							PIN given to contractor by FSS Vendor Support Center is 12345.
+							
+							3/020SE*8*12344&gt;
+							There are 8 segments in this 832 and the control number is 12344.
+							
+						
+					
+					
+					
+						I. NEW CONTRACT PERIOD [*]
+						A new original must be submitted if the contract number changes. If the contract period is extended a change can be sent with the new expiration in the DTM. SEE Table Next Page for details on segment BCT use.
+						Guideline for use of BCT10 - Transaction Set Purpose Code [*]
+						
+							then
+							
+							
+							
+							If BCT =
+							BCT02
+							BCT03
+							BCT04
+							BCT06
+							BCT07
+							BCT08
+							
+							(Catalog #)
+							(Version #)
+							(Revision #)
+							(Catalog #)
+							(Version #)
+							(Revision #)
+							
+							
+							
+							
+							
+							&quot;00&quot;    (ORIGINAL)
+							XXXXX
+							Blank      (not used)
+							Blank         (not used)
+							Blank      
+							
+							(not used)
+							Blank      
+							
+							(not used)
+							Blank    
+							
+							     (not used)
+							
+							
+							
+							
+							
+							&quot;42&quot;    (TEMPORARY)
+							XXXXX        (catalog affected)
+							Blank      (not used)
+							if applicable        . 
+							Blank   
+							
+							   (not used)
+							Blank    
+							
+							  (not used)
+							Blank     
+							
+							    (not used)
+							
+							
+							
+							
+							
+							&quot;05&quot;    (REPLACEMENT)
+							YYYYY               (new catalog number)
+							Blank      (not used)
+							Blank         (not used)
+							XXXXX     (old catalog number)
+							Blank    
+							
+							  (not used)
+							if applicable   (old revision #)
+							
+							
+							
+							
+							
+							&quot;02&quot;                        (ADD)
+							XXXXX        (catalog affected)
+							Blank      (not used)
+							01, 02, etc  (incremented)
+							Blank      (not used)
+							Blank  
+							
+							    (not used)
+							Blank   
+							
+							      (not used)
+							
+							
+							
+							
+							
+							&quot;03&quot;              (DELETE)
+							XXXXX        (catalog affected)
+							Blank      (not used)
+							01, 02, etc  (incremented)
+							Blank 
+							
+							    (not used)
+							Blank  
+							
+							    (not used)
+							Blank     
+							
+							    (not used)
+							
+							
+							
+							
+							
+							&quot;04&quot;                (CHANGE)
+							XXXXX        (catalog affected)
+							Blank      (not used)
+							01, 02, etc  (incremented)
+							Blank      
+							
+							(not used)
+							Blank  
+							
+							    (not used)
+							Blank    
+							
+							     (not used)
+							
+							
+							
+							
+							
+							
+							
+							NOTES:
+							
+							BCT10 is required.
+							
+							
+							The only time BCT06 and 08 are used is when BCT10=&quot;05&quot; (replacement catalog).
+							
+							
+							Increment revision number when BCT10=&quot;02&quot;, &quot;03&quot; or &quot;04&quot;.
+							
+							
+							Use the same catalog number for all transactional processing except for &quot;05&quot; (replacement catalog)
+							
+							
+							All usage is based on the 3050 832 Federal Implementation Convention.
+							
+						
+					
+					
+					
+						PART IV - MAINTENANCE , RENTAL , LEASE TO PURCHASE, TRAINING, ETC.
+						
+							posSEGMENT
+							TRANSLATION (all data for illustration only)
+							
+							
+							
+							A.  MAINTENANCE FOR PRODUCT  (copies allowed only if applicable)
+							
+							2/010LIN**PD*Standard Plan*SV*
+							
+							Maintenance*ZZ*ABC Company
+							
+							*MF*123456789*MG*12AX34*PI*27-4&gt;
+							Maintenance is provided for  ABC Company's part number 12AX34 under a plan known as the Standard Plan                     [*]
+							
+							2/170CTP**D01*498.5*1*Q1*****1-25 mi&gt;
+							The Federal Supply Schedule price is $498.50 per quarter for a zone of 1-25 miles from the service area.
+							
+							2/170CTP**MSR*650.95*1*Q1*****1-25 mi&gt;
+							List price on which  contract price is based is $650.95 per quarter.
+							
+							2/228SAC*C*A520******05*ZP&gt;
+							Price per copy rate for this area is 5 cents 
+							
+							2/170CTP**D01*895.50*1*Q1*****26-50 mi&gt;
+							The Federal Supply Schedule price is $895.50 per quarter for a zone of 26-50 miles from the service area. (NOTE CTP10 max 10 char)
+							
+							2/228SAC*N*D170*******ZP*30000&gt;
+							Price includes 30000 copies
+							
+							2/228SAC*C*F920***04****ZP&gt;
+							The excess copy charge is 4 cents a page for this area
+							
+							
+							
+							B.   MAINTENANCE FOR A MANUFACTURER                       
+							                                                [*]
+							
+							2/010LIN**SV*Maintenance*ZZ*ABC Co* MF*123456789*PD*Gold Plan*PI*27-4&gt;
+							Maintenance is provided for  ABC Company's products under a product known as the Gold Plan.
+							
+							2/070PID*S*08*GS*mmbbbcbe&gt;
+							The Product Code (P-code) assigned by GSA is mmbbbcbe. 
+							
+							2/070PID*F****The Gold Plan for covers all ABC Company models except the X495&gt;
+							Free-form descriptive data which clarifies what the plan covers.   [*]
+							
+							2/170CTP**D01*498.5*1*YR*****1-25 mi&gt;
+							The Federal Supply Schedule price is $498.50 per quarter for a zone of 1-25 miles from the service area.
+							
+							2/228SAC*C*G740******2500*EA&gt;
+							There is a charge of $25.00 per service call
+							
+							
+							
+							C.   MAINTENANCE FOR A DISCONTINUED ITEM NOT ON CONTRACT  
+							                       [*]
+							
+							2/010LIN**SV*Maintenance*PD*Typewriter Maintenance*PI*27-4&gt;
+							Typewriter Maintenance provided under Special Item Number 27-4.
+							
+							2/040REF*QX*XX1234*ABC Company&gt;
+							Maintenance can be used for ABC Company's discontinued part number XXX1234 . 
+							
+							
+							
+							D.  RENTAL THAT INCLUDES AN ALLOWANCE LEVEL, E.G. COPIES
+							
+							2/010LIN**SV*Rental*ZZ*ABC Company*MF*123456789*MG*12ax34*PD*Basic Plan*PI*27-5 &gt;
+							The item is ABC Company's part number 12ax34. The Rental Plan is known as Basic Plan                                                               [*]
+							
+							2/020SLN*1**I*25000*ZP&gt;
+							First subline for item; item includes 25,000 pages (copies).
+							
+							2/070PID*F****This plan provides lowest level coverage &gt;
+							A free-form description of up to 80 characters.  
+							
+							2/170CTP**RPM*299.00&gt;
+							Rental price per month is $299.00.
+							
+							2/170CTP**MSR*400.00&gt;
+							List price on which  contract price is based is $400.00.                 [*]
+							
+							2/228SAC*C*F920******05*ZP*25000*50000
+							Government excess copy charge is 5 cents/copy for 25-50,000.
+							
+							2/228SAC*C*D900***25000&gt;
+							Installation Charge is $250
+							
+							2/228SAC*C*F370***25000&gt;
+							Removal Charge is $250
+							
+							
+							
+							E.  RENTAL WITHOUT AN ALLOWANCE LEVEL, E.G. COPIES
+							
+							2/010LIN**SV*Rental*ZZ*ABC Company*MF*123456789*MG*12AX34*PD*One Year Low Volume*PI*27-5&gt;
+							The item is ABC Company's part number 12AX34.  The Rental Plan is known as a One Year Low Volume.                                [*]
+							
+							2/070PID*F****Best value plan &gt;
+							Free-form description up to 80 characters.  
+							
+							2/170CTP**RPM*239.00*12*MO&gt;
+							Rental price per month is $239.00 for 12 months.
+							
+							2/170CTP**D01*.02*1*ZP&gt;
+							Government charge per copy is 2 cents
+							
+							2/170CTP**MSR*350.00&gt;
+							List price on which  contract price is based is $350.00.                 [*]
+							
+							2/228SAC*C*D900***25000&gt;
+							Installation Charge is $250
+							
+							2/228SAC*C*F370***25000&gt;
+							Removal Charge is $250
+							
+						
+					
+					
+					
+						PART IV - MAINTENANCE , RENTAL , LEASE TO PURCHASE, TRAINING,  ETC.
+						
+							posSEGMENT
+							TRANSLATION (all data for illustration only)
+							
+							
+							
+							F.  IDENTIFYING SERVICE LOCATIONS
+							
+							2/010LIN**SV*Maintenance*ZZ*ABC Co.*
+							
+							MF*123456789*PD*Gold Plan*PI*27-4&gt;
+							Maintenance is provided for  ABC Company's products under a product known as the Gold Plan.                                              [*]
+							
+							2/070PID*S*08*GS*mmbbbcbe&gt;
+							The Product Code (P-code) assigned by GSA is mmbbbcbe. 
+							
+							2/230N1*SJ*Al's Office Equipment Repair Shop*1*987654321&gt;
+							Service (maintenance) is provided by Al's Office Equipment Repair Shop, DUNS number 987654321.
+							
+							
+							
+							G.  LEASE WITH OPTION TO BUY
+							
+							2/010LIN**SV*LTOP*ZZ*ABC Company*
+							
+							MF*123456789*MG*12AX34*PD*Lease Plan*PI*27-5&gt;
+							The item is ABC Company's part number 12AX34.  The Lease Plan is covered under Special Item Number 27-5
+							
+							2/070PID*F****Lease with option to buy&gt;
+							A free-form description of up to 80 characters.  (If more than 80 characters are necessary, multiple PID segments can be used)
+							
+							2/170CTP**ALT*5239.00&gt;
+							Price to purchase is $5, 239.00                                                      [*]
+							
+							2/170CTP**RPM*239.00*36*MO&gt;
+							Lease price per month is $239.00 for 36 months
+							
+							2/170CTP**MSR*350.00&gt;
+							List price on which  contract price is based is $350.00.                 [*]
+							
+							2/228SAC*C*D900***25000&gt;
+							Installation Charge is $250
+							
+							2/228SAC*C*F370***25000&gt;
+							Removal Charge is $250
+							
+							
+							
+							H.  LEASE WITH OPTION TO BUY WITH LEASE FACTOR
+							
+							2/010LIN**SV*LTOP*ZZ*ABC Company*
+							
+							MF*123456789*MG*12AX34*PD*Lease Plan*PI*27-5&gt;
+							The item is ABC Company's part number 12AX34.  The Lease Plan is covered under Special Item Number 27-5                                  [*]
+							
+							2/070PID*F****Lease with option to buy&gt;
+							A free-form description of up to 80 characters.  (If more than 80 characters are necessary, multiple PID segments can be used)
+							
+							2/170CTP**ALT*5239.00***SEL*.001&gt;
+							Price to purchase is $5,239. Lease Factor .001 is used to calculate amount of lease cost applied to purchase price                              [*]               
+							
+							2/170CTP**MSR*6995.00&gt;
+							List price on which  contract price is based is $6,995.00.              [*]
+							
+							2/228SAC*C*D900***25000&gt;
+							Installation Charge is $250
+							
+							2/228SAC*C*F370***25000&gt;
+							Removal Charge is $250
+							
+							
+							
+							I.  TRAINING Priced by the CLASS
+							
+							2/010LIN**SV*Training*ZZ*ABC Company*
+							
+							MF*123456789*PD*Word Perfect Basics*PI*605-12&gt;
+							The item is Training Services from ABC Company, identified by DUNS 123456789.  The class is known as Word Perfect Basics, covered under SIN 605-12.
+							
+							2/070PID*S*08*GS*mmbbbcbe&gt;
+							The Product Code (P-code) assigned by GSA is mmbbbcbe. 
+							
+							2/100PO4*3*6*HR*UNT&gt;
+							There are three six-hour classes in  a session.
+							
+							2/170CTP**D01*1500.00*1*S6&gt;
+							Contract Price is $1500 per session
+							
+							
+							
+							J.  TRAINING Priced by the Hour
+							
+							2/010LIN**SV*PrivateTraining*ZZ*ABC Company*MF*123456789*PD*Hardware Training*PI*605-12&gt;
+							The item is Training Services from ABC Company, identified by DUNS 123456789.  The class is known as Hardware training, covered under SIN 605-12.                                                          [*]
+							
+							2/070PID*S*08*GS*mmbbbcbe&gt;
+							The Product Code (P-code) assigned by GSA is mmbbbcbe. 
+							
+							2/170CTP**D01*125.00*1*HR&gt;
+							Contract Price is $125 per hour
+							
+							
+							
+							J.  TRAINING Priced by the STUDENT
+							
+							2/010LIN**SV*Private Training*ZZ*ABC Company*MF*123456789*PD*Basic Operation Training*PI*605-12&gt;
+							The item is Training Services from ABC Company, identified by DUNS 123456789.  The class is known as Basic Operation Training, covered under SIN 605-12.                                                              [*]
+							
+							2/070PID*S*08*GS*mmbbbcbe&gt;
+							The Product Code (P-code) assigned by GSA is mmbbbcbe. 
+						
+						2/170CTP**D01*850.00*1*IE&gt;
+						Contract Price is $850 per student
+						
+						
+					
+					
+					
+						PART V -ACCESSORIES, COMPONENTS, OPTIONS, UPGRADES
+						DEFINITIONS:
+						
+							Accessories
+							Components or Features
+							Options or 
+							
+							Upgrades
+							
+							
+							SubstitutionsAdd-ons
+							
+							Included with the base item
+							noyes
+							nono
+							
+							P-codedmay be
+							nono
+							no
+							Can be purchased separately
+							yesPossibly, but would be in separate LIN
+							Possibly, but would be in separate LIN
+							Possibly, but would be in separate LIN
+							
+							832 SegmentLIN
+							PID and/or SLNSLN
+							SLN
+							Link to primary item
+							F7 qualifierin LIN loop
+							in LIN loopin LIN loop
+							
+							Identified bypresence of F7 
+							Text or SLN with &quot;I&quot; qualifier
+							SLN with &quot;S&quot; qualifier
+							SLN with  &quot;A&quot; qualifier
+							
+							See samplePart V, A-D
+							Part V E-FPart V G
+							Part V H-J
+							
+							
+							
+							posSEGMENT
+							TRANSLATION (all data for illustration only)
+							
+							
+							
+							A.  ACCESSORIES THAT ARE NOT Pcoded
+							
+							2/010LIN**ZZ*ABC Company*MF*
+							
+							123456789*F7*12AX34*PD*Eraser*MG*PT109*PI*27-2&gt;
+							The item manufactured by ABC Company as part number 12AX34 is the End Item; the accessory item is PT109.                             [*]
+							
+							2/070PID*F****Extra tray for model 12AX34&gt;
+							A free-form description of up to 80 characters.  (If more than 80 characters are necessary, multiple PID segments can be used)
+							
+							2/170CTP**D01*29.00*1*EA&gt;
+							Contract Price is $29 each
+							
+							2/170CTP**MSR*50.00&gt;
+							List price on which  contract price is based is $50.00.
+							
+							
+							
+							B.  IF THERE IS A GENERIC PCODE FOR &quot;ACCESSORIES&quot;
+							ON THIS SCHEDULE            [*]   
+							
+							2/010LIN**ZZ*ABC Company*MF*
+							
+							123456789*F7*12AX34*PD*Eraser*MG*PT109*PI*27-6&gt;
+							The item manufactured by ABC Company as part number 12AX34 is the End Item; the accessory item is PT109.                               [*]
+							
+							2/070PID*F****Extra tray for model 12AX34&gt;
+							A free-form description of up to 80 characters.  (If more than 80 characters are necessary, multiple PID segments can be used)
+							
+							2/070PID*S*08*GS*zzppbbbcbe&gt;
+							Product Code (P-code) assigned by GSA to Accessories is zzppbbbcbe. 
+							
+							2/170CTP**D01*29.00*1*EA&gt;
+							Contract Price is $29 each
+							
+							2/170CTP**MSR*50.00&gt;
+							List price on which  contract price is based is $50.00.
+							
+							
+							
+							C.  WHEN THE ACCESSORY ITEM HAS ITS OWN Pcode
+							
+							2/010LIN**ZZ*ABC Company*MF*123456789*F7*12AX34*
+							
+							PD*Eraser*MG*PTC12*PI*27-6&gt;
+							The items manufactured by ABC Company as part numbers 12AX34, 45GB87, and 89RP56 are the End Items; the accessory item is PTC12                                                                                 [*]
+							
+							2/070PID*F****Connector cables&gt;
+							A free-form description of up to 80 characters.  (If more than 80 characters are necessary, multiple PID segments can be used)
+							
+							2/070PID*S*08*GS*ccppbbbcbe&gt;
+							Product Code (P-code) assigned by GSA  to Cables is ccppbbbcbe. 
+							
+							2/170CTP**D01*10.00*1*EA&gt;
+							Contract Price is $10 each
+							
+							2/170CTP**MSR*25.00&gt;
+							List price on which  contract price is based is $25.00
+							
+							
+							
+							D.  ACCESSORIES THAT GO WITH MULTIPLE ITEMS
+							
+							2/010LIN*1A*ZZ*ABC Co.*MF*123456789*
+							
+							*PD*Eraser*F7*12AX34*F7*45GB87*F7*89RP56*MG*PTC12*PI*27-6&gt;
+							The items manufactured by ABC Company as part numbers 12AX34, 45GB87, and 89RP56 are the End Items; the accessory item is PTC12 under index 1A because there are many end-items[*]
+							
+							2/010LIN*1A*F7*72GM956*F7*35PH257&gt;
+							The items manufactured by ABC Company as part numbers 72GM956 and 35PH257are additional End Items for accessory item PTC12, still under index 1A                                                      [*]
+							
+							
+							
+							
+							             PART V -ACCESSORIES, COMPONENTS, OPTIONS,
+							UPGRADES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[*]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							
+							
+							
+							posSEGMENT
+							TRANSLATION (all data for illustration only)
+							
+							
+							
+							E.  IF THERE ARE COMPONENTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[*]
+							
+							2/020SLN*1**I*2*EA****CN*Speakers*PD*
+							
+							six inch speakers*MF*123456789*
+							
+							MG*K234&gt;
+							Item has a component in the category &quot;speakers&quot;; item includes 2 six inch speakers, ABC Company part number K234
+							
+							
+							
+							F.  IF THERE ARE COMPONENTS that can be deleted for a credit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[*]
+							
+							
+							
+							2/020SLN*1**I*2*EA*15.00**D*CN*
+							
+							speakers*PD*6 inch speakers &gt;
+							Item has a component in category &quot;speakers&quot;; item includes 2 six inch speakers, which can be deleted for $15credit from base price
+							
+							
+							
+							G.  IF THERE ARE COMPONENTS THAT CAN BE SUBSTITUTED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							              [*]
+							
+							
+							
+							2/020SLN*1**S*2*EA*-300.00***
+							
+							CN*speakers *PD*eight inch speakers*
+							
+							ZZ*ABC Co*MG*G678&gt;
+							In the category &quot;speakers&quot; one can substitute 2 of part number G678 instead for a decrease of $300.00 to the base price.
+							
+							
+							
+							H. OPTIONS that can be ADD-ONS:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							  [*]
+							
+							When Options are not available separately, or priced differently
+							if ordered with  basic item
+							
+							2/020SLN*1**A*1*EA*198.00***CN* Monitors *PD*15inch monitor*ZZ*XYZ*MG*78SG&gt;
+							In the category &quot;Monitors&quot;, a 15&quot; monitor, part number 78SG from manufacturer XYZ can be added for additional $198.00
+							
+							
+							
+							I. If ONE CHOICE  IN A CATEGORY OF OPTIONS MUST BE SELECTED:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							  [*]
+							
+							2/020SLN*1**O*1*EA*0***CN*Operating System *PD*WINDOWS 95*MF*123456789*MG*78SG&gt;
+							In the category Operating System, one choice is can be made (choose 1);  this choice is Windows 95; there is no cost.
+							
+							2/020SLN*2**O*1*EA*0***CN*Operating System *PD*WINDOWS NT*MF*123456789*MG*78SG&gt;
+							In the category Operating System, one choice is can be made (choose 1);  this choice is Windows NT; there is no cost.
+							
+							
+							
+							J. If MANY OPTIONS SUCH AS IN COLORS ARE POSSIBLE         
+							   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							  [*]
+							
+							2/020SLN*1**O*1*EA*0***CN*Color*CL*
+							
+							Blue*CL*Red*CL*Gold*CL*Brown*CL*
+							
+							Black*CL*Green*CL*Orange*CL*Purple*CL*White&gt;
+							Item has many possible colors; choose one, no charge
+						
+						2/020SLN*1**O*1*EA*0***CN*Color*CL*
+						
+						Navy/White Stripe*CL*Gold/Black Stripe&gt;
+						Additional colors available
+						
+						
+					
+					
+Information on this page is intended as technical documentation for Electronic Data Interchange (EDI) supporting contracting with GSA
+						
+				

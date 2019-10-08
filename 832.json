@@ -1,0 +1,1842 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "EdiFabric API"
+  },
+  "paths": {},
+  "definitions": {
+    "TS832": {
+      "type": "object",
+      "properties": {
+        "ST": {
+          "$ref": "#/definitions/ST"
+        },
+        "BCT": {
+          "$ref": "#/definitions/BCT"
+        },
+        "NTE": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NTE"
+          }
+        },
+        "CTP": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CTP"
+          }
+        },
+        "REF": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/REF"
+          }
+        },
+        "PER": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PER"
+          }
+        },
+        "DTM": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DTM"
+          }
+        },
+        "CTB": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CTB"
+          }
+        },
+        "CUR": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CUR"
+          }
+        },
+        "ITD": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ITD"
+          }
+        },
+        "LDT": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LDT"
+          }
+        },
+        "SAC": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SAC"
+          }
+        },
+        "FOB": {
+          "$ref": "#/definitions/FOB"
+        },
+        "G93": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/G93"
+          }
+        },
+        "N1Loop": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Loop_N1_832"
+          }
+        },
+        "LINLoop": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Loop_LIN_832"
+          }
+        },
+        "CTT": {
+          "$ref": "#/definitions/CTT"
+        },
+        "SE": {
+          "$ref": "#/definitions/SE"
+        },
+        "ErrorContext": {
+          "$ref": "#/definitions/MessageErrorContext"
+        }
+      }
+    },
+    "ST": {
+      "type": "object",
+      "properties": {
+        "TransactionSetIdentifierCode_01": {
+          "type": "string"
+        },
+        "TransactionSetControlNumber_02": {
+          "type": "string"
+        },
+        "ImplementationConventionPreference_03": {
+          "type": "string"
+        }
+      }
+    },
+    "BCT": {
+      "type": "object",
+      "properties": {
+        "CatalogPurposeCode_01": {
+          "type": "string"
+        },
+        "CatalogNumber_02": {
+          "type": "string"
+        },
+        "CatalogVersionNumber_03": {
+          "type": "string"
+        },
+        "CatalogRevisionNumber_04": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_05": {
+          "type": "string"
+        },
+        "CatalogNumber_06": {
+          "type": "string"
+        },
+        "CatalogVersionNumber_07": {
+          "type": "string"
+        },
+        "CatalogRevisionNumber_08": {
+          "type": "string"
+        },
+        "Description_09": {
+          "type": "string"
+        },
+        "TransactionSetPurposeCode_10": {
+          "type": "string"
+        }
+      }
+    },
+    "NTE": {
+      "type": "object",
+      "properties": {
+        "NoteReferenceCode_01": {
+          "type": "string"
+        },
+        "Description_02": {
+          "type": "string"
+        }
+      }
+    },
+    "CTP": {
+      "type": "object",
+      "properties": {
+        "ClassofTradeCode_01": {
+          "type": "string"
+        },
+        "PriceIdentifierCode_02": {
+          "type": "string"
+        },
+        "UnitPrice_03": {
+          "type": "string"
+        },
+        "Quantity_04": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_05": {
+          "type": "string"
+        },
+        "PriceMultiplierQualifier_06": {
+          "type": "string"
+        },
+        "Multiplier_07": {
+          "type": "string"
+        },
+        "MonetaryAmount_08": {
+          "type": "string"
+        },
+        "BasisofUnitPriceCode_09": {
+          "type": "string"
+        },
+        "ConditionValue_10": {
+          "type": "string"
+        }
+      }
+    },
+    "REF": {
+      "type": "object",
+      "properties": {
+        "ReferenceNumberQualifier_01": {
+          "type": "string"
+        },
+        "ReferenceNumber_02": {
+          "type": "string"
+        },
+        "Description_03": {
+          "type": "string"
+        }
+      }
+    },
+    "PER": {
+      "type": "object",
+      "properties": {
+        "ContactFunctionCode_01": {
+          "type": "string"
+        },
+        "Name_02": {
+          "type": "string"
+        },
+        "CommunicationNumberQualifier_03": {
+          "type": "string"
+        },
+        "CommunicationNumber_04": {
+          "type": "string"
+        },
+        "CommunicationNumberQualifier_05": {
+          "type": "string"
+        },
+        "CommunicationNumber_06": {
+          "type": "string"
+        },
+        "CommunicationNumberQualifier_07": {
+          "type": "string"
+        },
+        "CommunicationNumber_08": {
+          "type": "string"
+        },
+        "ContactInquiryReference_09": {
+          "type": "string"
+        }
+      }
+    },
+    "DTM": {
+      "type": "object",
+      "properties": {
+        "DateTimeQualifier_01": {
+          "type": "string"
+        },
+        "Date_02": {
+          "type": "string"
+        },
+        "Time_03": {
+          "type": "string"
+        },
+        "TimeCode_04": {
+          "type": "string"
+        },
+        "Century_05": {
+          "type": "string"
+        },
+        "DateTimePeriodFormatQualifier_06": {
+          "type": "string"
+        },
+        "DateTimePeriod_07": {
+          "type": "string"
+        }
+      }
+    },
+    "CTB": {
+      "type": "object",
+      "properties": {
+        "RestrictionsConditionsQualifier_01": {
+          "type": "string"
+        },
+        "Description_02": {
+          "type": "string"
+        },
+        "QuantityQualifier_03": {
+          "type": "string"
+        },
+        "Quantity_04": {
+          "type": "string"
+        },
+        "AmountQualifierCode_05": {
+          "type": "string"
+        },
+        "Amount_06": {
+          "type": "string"
+        }
+      }
+    },
+    "CUR": {
+      "type": "object",
+      "properties": {
+        "EntityIdentifierCode_01": {
+          "type": "string"
+        },
+        "CurrencyCode_02": {
+          "type": "string"
+        },
+        "ExchangeRate_03": {
+          "type": "string"
+        },
+        "EntityIdentifierCode_04": {
+          "type": "string"
+        },
+        "CurrencyCode_05": {
+          "type": "string"
+        },
+        "CurrencyMarketExchangeCode_06": {
+          "type": "string"
+        },
+        "DateTimeQualifier_07": {
+          "type": "string"
+        },
+        "Date_08": {
+          "type": "string"
+        },
+        "Time_09": {
+          "type": "string"
+        },
+        "DateTimeQualifier_10": {
+          "type": "string"
+        },
+        "Date_11": {
+          "type": "string"
+        },
+        "Time_12": {
+          "type": "string"
+        },
+        "DateTimeQualifier_13": {
+          "type": "string"
+        },
+        "Date_14": {
+          "type": "string"
+        },
+        "Time_15": {
+          "type": "string"
+        },
+        "DateTimeQualifier_16": {
+          "type": "string"
+        },
+        "Date_17": {
+          "type": "string"
+        },
+        "Time_18": {
+          "type": "string"
+        },
+        "DateTimeQualifier_19": {
+          "type": "string"
+        },
+        "Date_20": {
+          "type": "string"
+        },
+        "Time_21": {
+          "type": "string"
+        }
+      }
+    },
+    "ITD": {
+      "type": "object",
+      "properties": {
+        "TermsTypeCode_01": {
+          "type": "string"
+        },
+        "TermsBasisDateCode_02": {
+          "type": "string"
+        },
+        "TermsDiscountPercent_03": {
+          "type": "string"
+        },
+        "TermsDiscountDueDate_04": {
+          "type": "string"
+        },
+        "TermsDiscountDaysDue_05": {
+          "type": "string"
+        },
+        "TermsNetDueDate_06": {
+          "type": "string"
+        },
+        "TermsNetDays_07": {
+          "type": "string"
+        },
+        "TermsDiscountAmount_08": {
+          "type": "string"
+        },
+        "TermsDeferredDueDate_09": {
+          "type": "string"
+        },
+        "DeferredAmountDue_10": {
+          "type": "string"
+        },
+        "PercentofInvoicePayable_11": {
+          "type": "string"
+        },
+        "Description_12": {
+          "type": "string"
+        },
+        "DayofMonth_13": {
+          "type": "string"
+        },
+        "PaymentMethodCode_14": {
+          "type": "string"
+        },
+        "Percent_15": {
+          "type": "string"
+        }
+      }
+    },
+    "LDT": {
+      "type": "object",
+      "properties": {
+        "LeadTimeCode_01": {
+          "type": "string"
+        },
+        "Quantity_02": {
+          "type": "string"
+        },
+        "UnitofTimePeriodorInterval_03": {
+          "type": "string"
+        },
+        "Date_04": {
+          "type": "string"
+        }
+      }
+    },
+    "SAC": {
+      "type": "object",
+      "properties": {
+        "AllowanceorChargeIndicator_01": {
+          "type": "string"
+        },
+        "ServicePromotionAllowanceorChargeCode_02": {
+          "type": "string"
+        },
+        "AgencyQualifierCode_03": {
+          "type": "string"
+        },
+        "AgencyServicePromotionAllowanceorChargeCode_04": {
+          "type": "string"
+        },
+        "Amount_05": {
+          "type": "string"
+        },
+        "AllowanceChargePercentQualifier_06": {
+          "type": "string"
+        },
+        "Percent_07": {
+          "type": "string"
+        },
+        "Rate_08": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_09": {
+          "type": "string"
+        },
+        "Quantity_10": {
+          "type": "string"
+        },
+        "Quantity_11": {
+          "type": "string"
+        },
+        "AllowanceorChargeMethodofHandlingCode_12": {
+          "type": "string"
+        },
+        "ReferenceNumber_13": {
+          "type": "string"
+        },
+        "OptionNumber_14": {
+          "type": "string"
+        },
+        "Description_15": {
+          "type": "string"
+        }
+      }
+    },
+    "FOB": {
+      "type": "object",
+      "properties": {
+        "ShipmentMethodofPayment_01": {
+          "type": "string"
+        },
+        "LocationQualifier_02": {
+          "type": "string"
+        },
+        "Description_03": {
+          "type": "string"
+        },
+        "TransportationTermsQualifierCode_04": {
+          "type": "string"
+        },
+        "TransportationTermsCode_05": {
+          "type": "string"
+        },
+        "LocationQualifier_06": {
+          "type": "string"
+        },
+        "Description_07": {
+          "type": "string"
+        },
+        "RiskofLossQualifier_08": {
+          "type": "string"
+        },
+        "Description_09": {
+          "type": "string"
+        }
+      }
+    },
+    "G93": {
+      "type": "object",
+      "properties": {
+        "PriceBracketIdentifier_01": {
+          "type": "string"
+        },
+        "Quantity_02": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_03": {
+          "type": "string"
+        },
+        "FreeformDescription_04": {
+          "type": "string"
+        },
+        "TransportationMethodTypeCode_05": {
+          "type": "string"
+        },
+        "PriceIdentifierCode_06": {
+          "type": "string"
+        }
+      }
+    },
+    "Loop_N1_832": {
+      "type": "object",
+      "properties": {
+        "N1": {
+          "$ref": "#/definitions/N1"
+        },
+        "N2": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/N2"
+          }
+        },
+        "N3": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/N3"
+          }
+        },
+        "N4": {
+          "$ref": "#/definitions/N4"
+        },
+        "REF": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/REF"
+          }
+        },
+        "PER": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PER"
+          }
+        },
+        "DTM": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DTM"
+          }
+        }
+      }
+    },
+    "Loop_LIN_832": {
+      "type": "object",
+      "properties": {
+        "LIN": {
+          "$ref": "#/definitions/LIN"
+        },
+        "G53": {
+          "$ref": "#/definitions/G53"
+        },
+        "SLN": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SLN"
+          }
+        },
+        "DTM": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DTM"
+          }
+        },
+        "REF": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/REF"
+          }
+        },
+        "PER": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PER"
+          }
+        },
+        "CTB": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CTB"
+          }
+        },
+        "PID": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PID"
+          }
+        },
+        "MEA": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MEA"
+          }
+        },
+        "PKG": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PKG"
+          }
+        },
+        "PO4": {
+          "$ref": "#/definitions/PO4"
+        },
+        "TD4": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TD4"
+          }
+        },
+        "ITD": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ITD"
+          }
+        },
+        "LDT": {
+          "$ref": "#/definitions/LDT"
+        },
+        "SAC": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SAC"
+          }
+        },
+        "FOB": {
+          "$ref": "#/definitions/FOB"
+        },
+        "TC2": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TC2"
+          }
+        },
+        "TXI": {
+          "$ref": "#/definitions/TXI"
+        },
+        "G39": {
+          "$ref": "#/definitions/G39"
+        },
+        "G55": {
+          "$ref": "#/definitions/G55"
+        },
+        "G54": {
+          "$ref": "#/definitions/G54"
+        },
+        "CTPLoop": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Loop_CTP_832"
+          }
+        },
+        "N1Loop": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Loop_N1_832"
+          }
+        },
+        "PKLLoop": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Loop_PKL_832"
+          }
+        }
+      }
+    },
+    "CTT": {
+      "type": "object",
+      "properties": {
+        "NumberofLineItems_01": {
+          "type": "string"
+        },
+        "HashTotal_02": {
+          "type": "string"
+        },
+        "Weight_03": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_04": {
+          "type": "string"
+        },
+        "Volume_05": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_06": {
+          "type": "string"
+        },
+        "Description_07": {
+          "type": "string"
+        }
+      }
+    },
+    "SE": {
+      "type": "object",
+      "properties": {
+        "NumberofIncludedSegments_01": {
+          "type": "string"
+        },
+        "TransactionSetControlNumber_02": {
+          "type": "string"
+        }
+      }
+    },
+    "MessageErrorContext": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "ControlNumber": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "string"
+        },
+        "Codes": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "type": "integer"
+          }
+        },
+        "Errors": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SegmentErrorContext"
+          }
+        },
+        "HasErrors": {
+          "type": "boolean"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "N1": {
+      "type": "object",
+      "properties": {
+        "EntityIdentifierCode_01": {
+          "type": "string"
+        },
+        "Name_02": {
+          "type": "string"
+        },
+        "IdentificationCodeQualifier_03": {
+          "type": "string"
+        },
+        "IdentificationCode_04": {
+          "type": "string"
+        },
+        "EntityRelationshipCode_05": {
+          "type": "string"
+        },
+        "EntityIdentifierCode_06": {
+          "type": "string"
+        }
+      }
+    },
+    "N2": {
+      "type": "object",
+      "properties": {
+        "Name_01": {
+          "type": "string"
+        },
+        "Name_02": {
+          "type": "string"
+        }
+      }
+    },
+    "N3": {
+      "type": "object",
+      "properties": {
+        "AddressInformation_01": {
+          "type": "string"
+        },
+        "AddressInformation_02": {
+          "type": "string"
+        }
+      }
+    },
+    "N4": {
+      "type": "object",
+      "properties": {
+        "CityName_01": {
+          "type": "string"
+        },
+        "StateorProvinceCode_02": {
+          "type": "string"
+        },
+        "PostalCode_03": {
+          "type": "string"
+        },
+        "CountryCode_04": {
+          "type": "string"
+        },
+        "LocationQualifier_05": {
+          "type": "string"
+        },
+        "LocationIdentifier_06": {
+          "type": "string"
+        }
+      }
+    },
+    "LIN": {
+      "type": "object",
+      "properties": {
+        "AssignedIdentification_01": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_02": {
+          "type": "string"
+        },
+        "ProductServiceID_03": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_04": {
+          "type": "string"
+        },
+        "ProductServiceID_05": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_06": {
+          "type": "string"
+        },
+        "ProductServiceID_07": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_08": {
+          "type": "string"
+        },
+        "ProductServiceID_09": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_10": {
+          "type": "string"
+        },
+        "ProductServiceID_11": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_12": {
+          "type": "string"
+        },
+        "ProductServiceID_13": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_14": {
+          "type": "string"
+        },
+        "ProductServiceID_15": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_16": {
+          "type": "string"
+        },
+        "ProductServiceID_17": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_18": {
+          "type": "string"
+        },
+        "ProductServiceID_19": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_20": {
+          "type": "string"
+        },
+        "ProductServiceID_21": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_22": {
+          "type": "string"
+        },
+        "ProductServiceID_23": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_24": {
+          "type": "string"
+        },
+        "ProductServiceID_25": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_26": {
+          "type": "string"
+        },
+        "ProductServiceID_27": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_28": {
+          "type": "string"
+        },
+        "ProductServiceID_29": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_30": {
+          "type": "string"
+        },
+        "ProductServiceID_31": {
+          "type": "string"
+        }
+      }
+    },
+    "G53": {
+      "type": "object",
+      "properties": {
+        "MaintenanceTypeCode_01": {
+          "type": "string"
+        }
+      }
+    },
+    "SLN": {
+      "type": "object",
+      "properties": {
+        "AssignedIdentification_01": {
+          "type": "string"
+        },
+        "AssignedIdentification_02": {
+          "type": "string"
+        },
+        "RelationshipCode_03": {
+          "type": "string"
+        },
+        "Quantity_04": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_05": {
+          "type": "string"
+        },
+        "UnitPrice_06": {
+          "type": "string"
+        },
+        "BasisofUnitPriceCode_07": {
+          "type": "string"
+        },
+        "RelationshipCode_08": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_09": {
+          "type": "string"
+        },
+        "ProductServiceID_10": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_11": {
+          "type": "string"
+        },
+        "ProductServiceID_12": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_13": {
+          "type": "string"
+        },
+        "ProductServiceID_14": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_15": {
+          "type": "string"
+        },
+        "ProductServiceID_16": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_17": {
+          "type": "string"
+        },
+        "ProductServiceID_18": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_19": {
+          "type": "string"
+        },
+        "ProductServiceID_20": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_21": {
+          "type": "string"
+        },
+        "ProductServiceID_22": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_23": {
+          "type": "string"
+        },
+        "ProductServiceID_24": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_25": {
+          "type": "string"
+        },
+        "ProductServiceID_26": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_27": {
+          "type": "string"
+        },
+        "ProductServiceID_28": {
+          "type": "string"
+        }
+      }
+    },
+    "PID": {
+      "type": "object",
+      "properties": {
+        "ItemDescriptionType_01": {
+          "type": "string"
+        },
+        "ProductProcessCharacteristicCode_02": {
+          "type": "string"
+        },
+        "AgencyQualifierCode_03": {
+          "type": "string"
+        },
+        "ProductDescriptionCode_04": {
+          "type": "string"
+        },
+        "Description_05": {
+          "type": "string"
+        },
+        "SurfaceLayerPositionCode_06": {
+          "type": "string"
+        },
+        "SourceSubqualifier_07": {
+          "type": "string"
+        },
+        "YesNoConditionorResponseCode_08": {
+          "type": "string"
+        }
+      }
+    },
+    "MEA": {
+      "type": "object",
+      "properties": {
+        "MeasurementReferenceIDCode_01": {
+          "type": "string"
+        },
+        "MeasurementQualifier_02": {
+          "type": "string"
+        },
+        "MeasurementValue_03": {
+          "type": "string"
+        },
+        "CompositeUnitofMeasure_04": {
+          "$ref": "#/definitions/C001"
+        },
+        "RangeMinimum_05": {
+          "type": "string"
+        },
+        "RangeMaximum_06": {
+          "type": "string"
+        },
+        "MeasurementSignificanceCode_07": {
+          "type": "string"
+        },
+        "MeasurementAttributeCode_08": {
+          "type": "string"
+        },
+        "SurfaceLayerPositionCode_09": {
+          "type": "string"
+        },
+        "MeasurementMethodorDevice_10": {
+          "type": "string"
+        }
+      }
+    },
+    "PKG": {
+      "type": "object",
+      "properties": {
+        "ItemDescriptionType_01": {
+          "type": "string"
+        },
+        "PackagingCharacteristicCode_02": {
+          "type": "string"
+        },
+        "AgencyQualifierCode_03": {
+          "type": "string"
+        },
+        "PackagingDescriptionCode_04": {
+          "type": "string"
+        },
+        "Description_05": {
+          "type": "string"
+        },
+        "UnitLoadOptionCode_06": {
+          "type": "string"
+        }
+      }
+    },
+    "PO4": {
+      "type": "object",
+      "properties": {
+        "Pack_01": {
+          "type": "string"
+        },
+        "Size_02": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_03": {
+          "type": "string"
+        },
+        "PackagingCode_04": {
+          "type": "string"
+        },
+        "WeightQualifier_05": {
+          "type": "string"
+        },
+        "GrossWeightperPack_06": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_07": {
+          "type": "string"
+        },
+        "GrossVolumeperPack_08": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_09": {
+          "type": "string"
+        },
+        "Length_10": {
+          "type": "string"
+        },
+        "Width_11": {
+          "type": "string"
+        },
+        "Height_12": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_13": {
+          "type": "string"
+        },
+        "InnerPack_14": {
+          "type": "string"
+        }
+      }
+    },
+    "TD4": {
+      "type": "object",
+      "properties": {
+        "SpecialHandlingCode_01": {
+          "type": "string"
+        },
+        "HazardousMaterialCodeQualifier_02": {
+          "type": "string"
+        },
+        "HazardousMaterialClassCode_03": {
+          "type": "string"
+        },
+        "Description_04": {
+          "type": "string"
+        }
+      }
+    },
+    "TC2": {
+      "type": "object",
+      "properties": {
+        "CommodityCodeQualifier_01": {
+          "type": "string"
+        },
+        "CommodityCode_02": {
+          "type": "string"
+        }
+      }
+    },
+    "TXI": {
+      "type": "object",
+      "properties": {
+        "TaxTypeCode_01": {
+          "type": "string"
+        },
+        "MonetaryAmount_02": {
+          "type": "string"
+        },
+        "Percent_03": {
+          "type": "string"
+        },
+        "TaxJurisdictionCodeQualifier_04": {
+          "type": "string"
+        },
+        "TaxJurisdictionCode_05": {
+          "type": "string"
+        },
+        "TaxExemptCode_06": {
+          "type": "string"
+        },
+        "RelationshipCode_07": {
+          "type": "string"
+        },
+        "DollarBasisForPercent_08": {
+          "type": "string"
+        },
+        "TaxIdentificationNumber_09": {
+          "type": "string"
+        },
+        "AssignedIdentification_10": {
+          "type": "string"
+        }
+      }
+    },
+    "G39": {
+      "type": "object",
+      "properties": {
+        "UPCCaseCode_01": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_02": {
+          "type": "string"
+        },
+        "ProductServiceID_03": {
+          "type": "string"
+        },
+        "SpecialHandlingCode_04": {
+          "type": "string"
+        },
+        "UnitWeight_05": {
+          "type": "string"
+        },
+        "WeightQualifier_06": {
+          "type": "string"
+        },
+        "WeightUnitCode_07": {
+          "type": "string"
+        },
+        "Height_08": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_09": {
+          "type": "string"
+        },
+        "Width_10": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_11": {
+          "type": "string"
+        },
+        "Length_12": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_13": {
+          "type": "string"
+        },
+        "Volume_14": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_15": {
+          "type": "string"
+        },
+        "PalletBlockandTiers_16": {
+          "type": "string"
+        },
+        "Pack_17": {
+          "type": "string"
+        },
+        "Size_18": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_19": {
+          "type": "string"
+        },
+        "Color_20": {
+          "type": "string"
+        },
+        "EquivalentWeight_21": {
+          "type": "string"
+        },
+        "AlternateTiersperPallet_22": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_23": {
+          "type": "string"
+        },
+        "ProductServiceID_24": {
+          "type": "string"
+        },
+        "WeightQualifier_25": {
+          "type": "string"
+        },
+        "UnitWeight_26": {
+          "type": "string"
+        },
+        "InnerPack_27": {
+          "type": "string"
+        }
+      }
+    },
+    "G55": {
+      "type": "object",
+      "properties": {
+        "ProductServiceIDQualifier_01": {
+          "type": "string"
+        },
+        "ProductServiceID_02": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_03": {
+          "type": "string"
+        },
+        "ProductServiceID_04": {
+          "type": "string"
+        },
+        "Height_05": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_06": {
+          "type": "string"
+        },
+        "Width_07": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_08": {
+          "type": "string"
+        },
+        "Length_09": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_10": {
+          "type": "string"
+        },
+        "Volume_11": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_12": {
+          "type": "string"
+        },
+        "Pack_13": {
+          "type": "string"
+        },
+        "Size_14": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_15": {
+          "type": "string"
+        },
+        "CashRegisterItemDescription_16": {
+          "type": "string"
+        },
+        "CashRegisterItemDescription_17": {
+          "type": "string"
+        },
+        "CouponFamilyCode_18": {
+          "type": "string"
+        },
+        "DatedProductNumberofDays_19": {
+          "type": "string"
+        },
+        "DepositValue_20": {
+          "type": "string"
+        },
+        "YesNoConditionorResponseCode_21": {
+          "type": "string"
+        },
+        "Color_22": {
+          "type": "string"
+        },
+        "UnitWeight_23": {
+          "type": "string"
+        },
+        "WeightQualifier_24": {
+          "type": "string"
+        },
+        "WeightUnitCode_25": {
+          "type": "string"
+        },
+        "UnitWeight_26": {
+          "type": "string"
+        },
+        "WeightQualifier_27": {
+          "type": "string"
+        },
+        "WeightUnitCode_28": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_29": {
+          "type": "string"
+        },
+        "ProductServiceID_30": {
+          "type": "string"
+        },
+        "FreeformDescription_31": {
+          "type": "string"
+        }
+      }
+    },
+    "G54": {
+      "type": "object",
+      "properties": {
+        "Quantity_01": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_02": {
+          "type": "string"
+        },
+        "UPCCaseCode_03": {
+          "type": "string"
+        },
+        "ProductServiceIDQualifier_04": {
+          "type": "string"
+        },
+        "ProductServiceID_05": {
+          "type": "string"
+        },
+        "FreeformDescription_06": {
+          "type": "string"
+        }
+      }
+    },
+    "Loop_CTP_832": {
+      "type": "object",
+      "properties": {
+        "CTP": {
+          "$ref": "#/definitions/CTP"
+        },
+        "G40": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/G40"
+          }
+        },
+        "DTM": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DTM"
+          }
+        },
+        "G36": {
+          "$ref": "#/definitions/G36"
+        },
+        "LDT": {
+          "$ref": "#/definitions/LDT"
+        },
+        "CUR": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CUR"
+          }
+        },
+        "PO4": {
+          "$ref": "#/definitions/PO4"
+        },
+        "CTB": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CTB"
+          }
+        },
+        "REF": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/REF"
+          }
+        },
+        "G43": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/G43"
+          }
+        },
+        "SAC": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SAC"
+          }
+        },
+        "G26": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/G26"
+          }
+        }
+      }
+    },
+    "Loop_PKL_832": {
+      "type": "object",
+      "properties": {
+        "PKL": {
+          "$ref": "#/definitions/PKL"
+        },
+        "CTP": {
+          "$ref": "#/definitions/CTP"
+        },
+        "PKG": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PKG"
+          }
+        }
+      }
+    },
+    "SegmentErrorContext": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Position": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "Codes": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "type": "integer"
+          }
+        },
+        "Errors": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataElementErrorContext"
+          }
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    },
+    "C001": {
+      "type": "object",
+      "properties": {
+        "UnitorBasisforMeasurementCode_01": {
+          "type": "string"
+        },
+        "Exponent_02": {
+          "type": "string"
+        },
+        "Multiplier_03": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_04": {
+          "type": "string"
+        },
+        "Exponent_05": {
+          "type": "string"
+        },
+        "Multiplier_06": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_07": {
+          "type": "string"
+        },
+        "Exponent_08": {
+          "type": "string"
+        },
+        "Multiplier_09": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_10": {
+          "type": "string"
+        },
+        "Exponent_11": {
+          "type": "string"
+        },
+        "Multiplier_12": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_13": {
+          "type": "string"
+        },
+        "Exponent_14": {
+          "type": "string"
+        },
+        "Multiplier_15": {
+          "type": "string"
+        }
+      }
+    },
+    "G40": {
+      "type": "object",
+      "properties": {
+        "PriceBracketIdentifier_01": {
+          "type": "string"
+        },
+        "ItemListCostNew_02": {
+          "type": "string"
+        },
+        "ItemListCostOld_03": {
+          "type": "string"
+        },
+        "FreeformDescription_04": {
+          "type": "string"
+        },
+        "PriceNewSuggestedRetail_05": {
+          "type": "string"
+        },
+        "PriceOldSuggestedRetail_06": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_07": {
+          "type": "string"
+        },
+        "PriceIdentifierCode_08": {
+          "type": "string"
+        }
+      }
+    },
+    "G36": {
+      "type": "object",
+      "properties": {
+        "PriceListNumber_01": {
+          "type": "string"
+        },
+        "PriceListIssueNumber_02": {
+          "type": "string"
+        },
+        "Date_03": {
+          "type": "string"
+        },
+        "PriceConditionAppliesCode_04": {
+          "type": "string"
+        }
+      }
+    },
+    "G43": {
+      "type": "object",
+      "properties": {
+        "MarketAreaCodeQualifier_01": {
+          "type": "string"
+        },
+        "MarketAreaCodeIdentifier_02": {
+          "type": "string"
+        },
+        "Description_03": {
+          "type": "string"
+        },
+        "ClassofTradeCode_04": {
+          "type": "string"
+        }
+      }
+    },
+    "G26": {
+      "type": "object",
+      "properties": {
+        "PriceConditionCode_01": {
+          "type": "string"
+        },
+        "DateQualifier_02": {
+          "type": "string"
+        },
+        "Date_03": {
+          "type": "string"
+        },
+        "QuantityBasis_04": {
+          "type": "string"
+        },
+        "Quantity_05": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_06": {
+          "type": "string"
+        }
+      }
+    },
+    "PKL": {
+      "type": "object",
+      "properties": {
+        "ProductServiceIDQualifier_01": {
+          "type": "string"
+        },
+        "ProductServiceID_02": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_03": {
+          "type": "string"
+        },
+        "Quantity_04": {
+          "type": "string"
+        },
+        "Height_05": {
+          "type": "string"
+        },
+        "Width_06": {
+          "type": "string"
+        },
+        "ItemDepth_07": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_08": {
+          "type": "string"
+        },
+        "GrossWeightperPack_09": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_10": {
+          "type": "string"
+        },
+        "GrossVolumeperPack_11": {
+          "type": "string"
+        },
+        "UnitorBasisforMeasurementCode_12": {
+          "type": "string"
+        }
+      }
+    },
+    "DataElementErrorContext": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Position": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Code": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "type": "integer"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "ComponentPosition": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "RepetitionPosition": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
