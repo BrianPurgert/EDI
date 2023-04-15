@@ -8,8 +8,7 @@ https://vsc.gsa.gov/faq/startup-kit.cfm#ediInstructions
 🔑|🔓
 ---|---
 Url|ecdata.fas.gsa.gov 
-User|govconsvc
-Pass|GuV7sJ#rQSkxKz6!
+
 ```
 If pushing files just drop file in home directory
 If pulling files then change directory(cd) to togo
@@ -19,11 +18,6 @@ If pulling files then change directory(cd) to togo
 ### GSA EDI Contacts
 🔑|🔓
 |:---|:---|
-Group email| edistat@gsa.gov
-Phone|703-605-9444
-Contact Name| George Miller
-Contact Phone| 703-605-9512
-Contact Email|  preston.miller@gsa.gov
 ## Other Information
 Name|Value
 |:---|:---|
